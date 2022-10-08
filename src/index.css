@@ -1,0 +1,60 @@
+:root {
+  --yellow: #f5c32c;
+  --orange: #fca61f;
+  --black: #242d49;
+  --gray: rgba(36, 45, 73, 0.65);
+  --profileShadow: 0px 4px 17px 2px rgba(0, 0, 0, 0.25);
+  --hrColor: #cfcdcd;
+  --cardColor: rgba(255, 255, 255, 0.64);
+  --buttonBg: linear-gradient(98.63deg, #4caefe 0%, #226fae 100%);
+  --inputColor: rgba(40, 52, 62, 0.07);
+  --photo: #4CB256;
+  --video: #EF5757;
+  --location: #be58b7;
+  --shedule: #E1AE4A;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Josefin Sans',sans-serif;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5{
+  font-weight: bold;
+}
+
+li{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+button{
+  outline: none;
+  border: none;
+}
+
+.container{
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #efefef 0%, #e0dddd 50%);
+}
+
+.blur{
+  position: absolute;
+  width: 22rem;
+  height: 14rem;
+  border-radius: 50%;
+  background: #a6ddf0;
+  filter: blur(72px);
+}
