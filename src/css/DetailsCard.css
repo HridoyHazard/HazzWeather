@@ -1,0 +1,49 @@
+.details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--cardColor);
+    box-shadow: var(--profileShadow);
+    border-radius: 1rem;
+    margin: 1rem;
+    margin-bottom: 1rem;
+}
+.clouds{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+.celsius{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #095F62;
+}
+.cloud-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cloud-icon img{
+    width: 25%;
+}
+.des{
+    text-transform: uppercase;
+    color: darkgray;
+    font-size: 0.75rem;
+}
+.vl{
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--hrColor);
+}
+.more-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-right: 2rem;
+}
