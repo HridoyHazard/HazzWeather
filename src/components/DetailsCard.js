@@ -1,6 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 import '../css/DetailsCard.css'
+import BackgroundSound from './BackgroundSound'
 
 function DetailsCard({weather_icon, data}) {
   const {clouds, main, weather} = data.list[0]
@@ -22,6 +23,7 @@ function DetailsCard({weather_icon, data}) {
            <p className="">Min Temp: {Math.round(main.temp_min)}&deg;C</p>
            <p className="">Max Temp: {Math.round(main.temp_max)}&deg;C</p>
        </div> 
+       <BackgroundSound weather={weather[0]}/>
     </div>
   )
 }
