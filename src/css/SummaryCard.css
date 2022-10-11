@@ -12,7 +12,7 @@
   justify-content: space-between;
   height: 10em;
   gap: 1rem;
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.5rem;
   text-align: center;
 }
 .summary-items > div > p:nth-of-type(1) {

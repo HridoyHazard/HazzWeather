@@ -22,7 +22,6 @@ import BackgroundColor from './components/BackgroundColor';
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const { t, i18n } = useTranslation();
-
   const [noData, setNoData] = useState(t('no-data'));
   const [searchTerm, setSearchTerm] = useState('');
   const [weatherData, setWeatherData] = useState([]);
@@ -34,12 +33,16 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [backgroundSoundEnabled, setBackgroundSoundEnabled] = useState(true);
   const [isFahrenheitMode, setIsFahrenheitMode] = useState(false);
-
   const degreeSymbol = useMemo(
     () => (isFahrenheitMode ? '\u00b0F' : '\u00b0C'),
     [isFahrenheitMode]
   );
+  const [active, setActive] = useState(false);
 
+  const activate = () => {
+    setActive(true);
+  }
+  
   const toggleDark = () => {
     document.body.classList.toggle('dark');
   };
@@ -52,7 +55,7 @@ function App() {
     const { value } = input.target;
     setSearchTerm(value);
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     getWeather(searchTerm);
@@ -184,7 +187,8 @@ function App() {
                 type="text"
                 name=""
                 id=""
-                placeholder="Explore cities weather"
+                onClick={activate}
+                placeholder={active ? "":"Add City"}
                 onChange={handleChange}
                 required
               />
