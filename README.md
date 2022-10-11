@@ -15,6 +15,12 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 - Displays present weather conditions(Temperature, Humidity, Cloud Cover) along with forecasts for the future.
 - Animatation According To Weather Condition.
 
+## Setup Guide
+- Make a `.env` file and copy the contents of `.example.env` into that file.
+- Generate your own API key from `openweathermap.org`.
+- Install the node modules with `npm install`.
+- Run the application using `npm run start`.
+
 ## REPO STATUS
 ![GitHub PR Open](https://img.shields.io/github/issues-pr/HridoyHazard/HazzWeather?style=for-the-badge&color=aqua)
 ![GitHub PR closed](https://img.shields.io/github/issues-pr-closed-raw/HridoyHazard/HazzWeather?style=for-the-badge&color=blue)
