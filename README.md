@@ -1,5 +1,7 @@
 ## _The Only Weather App You Need !_
-![image](https://user-images.githubusercontent.com/71395891/195014989-9760cf7c-a410-424f-a144-fc44f0a6b532.png)>
+![image](https://user-images.githubusercontent.com/71395891/195014989-9760cf7c-a410-424f-a144-fc44f0a6b532.png)
+
+[Live Link](https://effulgent-brioche-795ac4.netlify.app/)
 
 ## About
 Weather Application created using ReactJS and APIs provided by OpenAPI.org.
