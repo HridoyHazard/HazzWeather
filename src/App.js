@@ -138,7 +138,7 @@ function App() {
         >
           <div className="name">
             <div className="logo">
-              Hazz Weather<hr></hr>
+              HazzWeather<hr></hr>
             </div>
             <div className="toggle-container">
               <input
