@@ -217,6 +217,7 @@ function App() {
               <option value="es">{t('languages.es')}</option>
               <option value="fr">{t('languages.fr')}</option>
               <option value="id">{t('languages.id')}</option>
+              <option value="ta">{t('languages.ta')}</option>
             </select>
             <div className="toggle-container">
               <input
@@ -254,7 +255,7 @@ function App() {
                         alt="a person thinking about what place to find"
                       />
                       <p style={{ padding: '20px' }}>
-                        Don't worry, if you don't know what to search, try with:
+                        Don't worry, if you don't know what search, try with:
                         Dhaka, Canada or maybe USA.
                       </p>
                     </>
