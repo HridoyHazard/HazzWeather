@@ -138,7 +138,7 @@ function App() {
         >
           <div className="name">
             <div className="logo">
-              Weather App<hr></hr>
+              Hazz Weather<hr></hr>
             </div>
             <div className="toggle-container">
               <input
@@ -245,7 +245,7 @@ function App() {
                       />
                       <p style={{ padding: "20px" }}>
                         Don't worry, if you don't know what search, try with:
-                        Canada, New York or maybe Tatooine.
+                        Dhaka, Canada or maybe USA.
                       </p>
                     </>
                   )}
