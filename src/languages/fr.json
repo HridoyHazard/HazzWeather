@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "¡Application du temps dont vous avez besoin!",
+    "today": "Hui",
+    "explore": "#Explorer ?",
+    "more-on": "Plus dans",
+    "no-data": "Il n'y pas données",
+    "unknown-location": "lieu inconnu",
+    "realFell": "Sentiment royal",
+    "humidity": "Humidité",
+    "cover": "Couverture",
+    "min-temp": "Min Temp",
+    "max-temp": "Max Temp",
+    "languages": {
+      "en": "Anglais",
+      "es": "Espagnol",
+      "fr": "Français",
+      "id": "Indonesia"
+    }
+  }
+}

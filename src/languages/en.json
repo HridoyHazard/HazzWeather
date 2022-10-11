@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "The Only Weather App You Need !",
+    "today": "Today",
+    "explore": "#Explore ?",
+    "more-on": "More On",
+    "no-data": "No Data Yet",
+    "unknown-location": "Unknown location",
+    "realFell": "RealFell",
+    "cover": "Cloud Cover",
+    "humidity": "Humidity",
+    "min-temp": "Min Temp",
+    "max-temp": "Max Temp",
+    "languages": {
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French",
+      "id": "Indonesia"
+    }
+  }
+}

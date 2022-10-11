@@ -1,0 +1,21 @@
+{
+  "translation": {
+    "title": "¡Aplicación del tiempo que necesitas!",
+    "today": "Hoy",
+    "explore": "#Explorar ?",
+    "more-on": "Más en",
+    "no-data": "No hay datos",
+    "unknown-location": "Localizacion desconocida",
+    "realFell": "Sensacion Real",
+    "humidity": "Humedad",
+    "cover": "Tapar",
+    "min-temp": "Min Temp",
+    "max-temp": "Max Temp",
+    "languages": {
+      "en": "Inglés",
+      "es": "Español",
+      "fr": "Frances",
+      "id": "Indonesia"
+    }
+  }
+}
