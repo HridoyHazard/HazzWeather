@@ -149,7 +149,7 @@ function App() {
           <div className="name">
             <div className="logo">
 
-              Hazz Weather<br></br>
+              HazzWeather<br></br>
 
             </div>
             <div className="toggle-container">
