@@ -1,27 +1,24 @@
-# [Weather App](https://newweatherappreact.netlify.app/)
 ## _The Only Weather App You Need !_
-<img width="959" alt="Screenshot 2022-10-02 005848" src="https://user-images.githubusercontent.com/78149368/193426253-0cbcfb9d-238a-46e5-8708-b169efa269ae.png">
+![image](https://user-images.githubusercontent.com/71395891/195014989-9760cf7c-a410-424f-a144-fc44f0a6b532.png)>
 
 ## About
 Weather Application created using ReactJS and APIs provided by OpenAPI.org.
-- [Contributing Guidelines](https://github.com/ShivamWho/new-weather-app-react/blob/main/CONTRIBUTING.md)
--  [About Hacktoberfest](https://github.com/ShivamWho/new-weather-app-react/blob/main/HACKTOBERFEST.md)
+- [Contributing Guidelines](https://github.com/HridoyHazard/HazzWeather/blob/main/CONTRIBUTING.md)
+-  [About Hacktoberfest](https://github.com/HridoyHazard/HazzWeather/blob/main/HACKTOBERFEST.md)
 
 ## Features
 
 - Type the name of city whose weather has to be known OR allow location access(to check weather of present location).
 - Sound customised to selected city's weather played in the background.
 - Displays present weather conditions(Temperature, Humidity, Cloud Cover) along with forecasts for the future.
+- Animatation According To Weather Condition.
 
 ## REPO STATUS
-![GitHub PR Open](https://img.shields.io/github/issues-pr/ShivamWho/new-weather-app-react?style=for-the-badge&color=aqua)
-![GitHub PR closed](https://img.shields.io/github/issues-pr-closed-raw/ShivamWho/new-weather-app-react?style=for-the-badge&color=blue)
-![GitHub language count](https://img.shields.io/github/languages/count/ShivamWho/new-weather-app-react?style=for-the-badge&color=brightgreen)
+![GitHub PR Open](https://img.shields.io/github/issues-pr/HridoyHazard/HazzWeather?style=for-the-badge&color=aqua)
+![GitHub PR closed](https://img.shields.io/github/issues-pr-closed-raw/HridoyHazard/HazzWeather?style=for-the-badge&color=blue)
+![GitHub language count](https://img.shields.io/github/languages/count/HridoyHazard/HazzWeather?style=for-the-badge&color=brightgreen)
 <br><br>
-## Our Contributors
-<a href="https://github.com/ShivamWho/new-weather-app-react/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=ShivamWho/new-weather-app-react" />
-</a>
+
 
 
 <br>
