@@ -41,7 +41,7 @@ function DetailsCard({ weather_icon, data, soundEnabled, isFahrenheitMode, degre
 					{t('humidity')}: <span>{main.humidity}%</span>
 				</p>
 				<p className=''>
-					{t('cover')}: <span>{clouds.all}</span>
+					{t('cover')}: <span>{clouds.all}%</span>
 				</p>
 				<p className=''>
 					{t('min-temp')}: <span>{formattedData.temp_min}{degreeSymbol}</span>
