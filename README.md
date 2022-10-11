@@ -3,19 +3,19 @@
 
 [Live Link](https://effulgent-brioche-795ac4.netlify.app/)
 
-## About
+## <code>About</code>
 Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 - [Contributing Guidelines](https://github.com/HridoyHazard/HazzWeather/blob/main/CONTRIBUTING.md)
 -  [About Hacktoberfest](https://github.com/HridoyHazard/HazzWeather/blob/main/HACKTOBERFEST.md)
 
-## Features
+## <code>Features</code>
 
 - Type the name of city whose weather has to be known OR allow location access(to check weather of present location).
 - Sound customised to selected city's weather played in the background.
 - Displays present weather conditions(Temperature, Humidity, Cloud Cover) along with forecasts for the future.
 - Animatation According To Weather Condition.
 
-## REPO STATUS
+## <code>REPO STATUS</code>
 ![GitHub PR Open](https://img.shields.io/github/issues-pr/HridoyHazard/HazzWeather?style=for-the-badge&color=aqua)
 ![GitHub PR closed](https://img.shields.io/github/issues-pr-closed-raw/HridoyHazard/HazzWeather?style=for-the-badge&color=blue)
 ![GitHub language count](https://img.shields.io/github/languages/count/HridoyHazard/HazzWeather?style=for-the-badge&color=brightgreen)
