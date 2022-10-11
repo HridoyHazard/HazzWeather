@@ -188,7 +188,7 @@ function App() {
                 name=""
                 id=""
                 onClick={activate}
-                placeholder={active ? "":"Add City"}
+                placeholder={active ? "":"Explore cities weather"}
                 onChange={handleChange}
                 required
               />
