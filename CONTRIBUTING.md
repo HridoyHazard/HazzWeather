@@ -3,19 +3,19 @@
 1. Fork the repository (Click the Fork button in the top right of this page, click your Profile Image)
 2. Clone the forked repository to your local machine.
 ```markdown
-git clone https://github.com/your-username/new-weather-app-react.git
+https://github.com/HridoyHazard/HazzWeather.git
 ```
 3. change the present working directory
 ```markdown
-cd new-weather-app-react
+cd HazzWeather
 ```
 4. Install npm packages
 ```markdown
 npm install
 ```
 5. Create Your API Key from <a href= "https://openweathermap.org/">OpenWeather</a>
-6. Create .env file in new-weather-app-react folder and do as shown in image
-<img width="563" alt="Screenshot 2022-10-02 011707" src="https://user-images.githubusercontent.com/78149368/193426007-c8d2e98d-6f33-4586-abc4-be883759e37d.png">
+6. Create .env file in HazzWeather folder and do as shown in image
+![image](https://user-images.githubusercontent.com/71395891/195035284-8aced9ac-131c-48df-a3f0-a5286399f5e7.png)
 
 7. Run the React Project
 ```markdown
