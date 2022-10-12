@@ -1,21 +1,21 @@
 {
   "translation": {
-    "title": "¡Aplicación del tiempo que necesitas!",
+    "title": "¡La aplicación del tiempo que necesitas!",
     "today": "Hoy",
     "explore": "#Explorar ?",
-    "more-on": "Más en",
+    "more-on": "Más de",
     "no-data": "No hay datos",
-    "unknown-location": "Localizacion desconocida",
-    "realFell": "Sensacion Real",
+    "unknown-location": "Localización desconocida",
+    "realFell": "Sensación Real",
     "humidity": "Humedad",
-    "cover": "Tapar",
-    "min-temp": "Min Temp",
-    "max-temp": "Max Temp",
+    "cover": "Cubierto",
+    "min-temp": "Mínima",
+    "max-temp": "Máxima",
     "languages": {
       "en": "Inglés",
       "es": "Español",
-      "fr": "Frances",
-      "id": "Indonesia",
+      "fr": "Francés",
+      "id": "Indonesio",
       "ta": "Tamil"
     }
   }
