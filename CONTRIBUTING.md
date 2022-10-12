@@ -3,7 +3,7 @@
 1. Fork the repository (Click the Fork button in the top right of this page, click your Profile Image)
 2. Clone the forked repository to your local machine.
 ```markdown
-https://github.com/HridoyHazard/HazzWeather.git
+    git clone https://github.com/<your-username>/HazzWeather.git
 ```
 3. change the present working directory
 ```markdown
