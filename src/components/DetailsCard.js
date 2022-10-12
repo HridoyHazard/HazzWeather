@@ -5,9 +5,9 @@ import BackgroundSound from './BackgroundSound';
 import { useTranslation } from 'react-i18next';
 import convertToFahrenheit from '../helpers/convertToFahrenheit'
 
-function DetailsCard({ weather_icon, data, soundEnabled, isFahrenheitMode, degreeSymbol}) {
+function DetailsCard({ weather_icon, data, soundEnabled, isFahrenheitMode, degreeSymbol }) {
 	const { clouds, main, weather } = data.list[0];
-  const { t } = useTranslation();
+	const { t } = useTranslation();
 
 	const formattedData = useMemo(() => {
 		return {
@@ -17,7 +17,7 @@ function DetailsCard({ weather_icon, data, soundEnabled, isFahrenheitMode, degre
 			temp_max: Math.round(isFahrenheitMode ? convertToFahrenheit(main.temp_max) : main.temp_max),
 		};
 	}, [isFahrenheitMode, main.feels_like, main.temp, main.temp_max, main.temp_min])
-	
+
 	return (
 		<div className='details'>
 			<div className='clouds'>
@@ -35,7 +35,7 @@ function DetailsCard({ weather_icon, data, soundEnabled, isFahrenheitMode, degre
 			</div>
 			<div className='more-info'>
 				<p className=''>
-					{t('realFell')}: <span>{formattedData.feels_like}{degreeSymbol}</span>
+					{t('RealFeel')}: <span>{formattedData.feels_like}{degreeSymbol}</span>
 				</p>
 				<p className=''>
 					{t('humidity')}: <span>{main.humidity}%</span>
