@@ -1,0 +1,23 @@
+{
+    "translation": {
+        "title": "एकमात्र मौसम ऐप जिसकी आपको आवश्यकता है!",
+        "today": "आज",
+        "explore": "#अन्वेषण करना ?",
+        "more-on": "अधिक",
+        "no-data": "अभी तक कोई डेटा नहीं",
+        "unknown-location": "अज्ञात स्थान",
+        "realFell": "असली लग रहा है",
+        "cover": "बादल मूंदना",
+        "humidity": "नमी",
+        "min-temp": "न्यूनतम तापमान",
+        "max-temp": "अधिकतम तापमान",
+        "languages": {
+            "en": "English",
+            "es": "Spanish",
+            "fr": "French",
+            "id": "Indonesia",
+            "tam": "Tamil",
+            "hin": "Hindi"
+        }
+    }
+}
