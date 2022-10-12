@@ -41,8 +41,8 @@ function App() {
 
   const activate = () => {
     setActive(true);
-  }
-  
+  };
+
   const toggleDark = () => {
     document.body.classList.toggle('dark');
   };
@@ -55,7 +55,7 @@ function App() {
     const { value } = input.target;
     setSearchTerm(value);
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     getWeather(searchTerm);
@@ -119,9 +119,9 @@ function App() {
     navigator.geolocation.getCurrentPosition(myIP);
   });
   return (
-    <div className="container">
+    <div className='container'>
       <div
-        className="blur"
+        className='blur'
         style={{
           background: `${
             weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
@@ -131,7 +131,7 @@ function App() {
         }}
       ></div>
       <div
-        className="blur"
+        className='blur'
         style={{
           background: `${
             weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
@@ -140,27 +140,27 @@ function App() {
           left: '-6rem',
         }}
       ></div>
-      <div className="content">
+      <div className='content'>
         <div
-          className="form-container"
+          className='form-container'
           style={{
             backgroundImage: `url(${
               weatherData ? BackgroundImage(weatherData) : LakeBackground
             })`,
           }}
         >
-          <div className="name">
-            <div className="logo">
+          <div className='name'>
+            <div className='logo'>
               Hazz Weather<br></br>
             </div>
-            <div className="toggle-container">
+            <div className='toggle-container'>
               <input
-                type="checkbox"
-                className="checkbox"
-                id="checkbox"
+                type='checkbox'
+                className='checkbox'
+                id='checkbox'
                 onChange={toggleDark}
               />
-              <label htmlFor="checkbox" className="label">
+              <label htmlFor='checkbox' className='label'>
                 <TbMoon
                   style={{
                     color: '#a6ddf0',
@@ -171,28 +171,28 @@ function App() {
                     color: '#f5c32c',
                   }}
                 />
-                <div className="ball" />
+                <div className='ball' />
               </label>
             </div>
-            <div className="city">
+            <div className='city'>
               <TbMapSearch />
               <p>{city}</p>
             </div>
           </div>
-          <div className="search">
+          <div className='search'>
             <h2>{t('title')}</h2>
             <hr />
-            <form className="search-bar" noValidate onSubmit={handleSubmit}>
+            <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
-                type="text"
-                name=""
-                id=""
+                type='text'
+                name=''
+                id=''
                 onClick={activate}
-                placeholder={active ? "":"Explore cities weather"}
+                placeholder={active ? '' : 'Explore cities weather'}
                 onChange={handleChange}
                 required
               />
-              <button className="s-icon">
+              <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
                     navigator.geolocation.getCurrentPosition(myIP);
@@ -201,54 +201,54 @@ function App() {
               </button>
             </form>
             <button
-              className="s-icon sound-toggler"
+              className='s-icon sound-toggler'
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
             >
               {backgroundSoundEnabled ? <TbVolume /> : <TbVolumeOff />}
             </button>
           </div>
         </div>
-        <div className="info-container">
-          <div className="info-inner-container">
+        <div className='info-container'>
+          <div className='info-inner-container'>
             <select
-              className="selected-languange"
+              className='selected-languange'
               value={currentLanguage}
               onChange={(e) => handleLanguage(e)}
             >
-              <option selected value="en">
+              <option selected value='en'>
                 {t('languages.en')}
               </option>
-              <option value="es">{t('languages.es')}</option>
-              <option value="fr">{t('languages.fr')}</option>
-              <option value="id">{t('languages.id')}</option>
-              <option value="ta">{t('languages.ta')}</option>
+              <option value='es'>{t('languages.es')}</option>
+              <option value='fr'>{t('languages.fr')}</option>
+              <option value='id'>{t('languages.id')}</option>
+              <option value='ta'>{t('languages.ta')}</option>
             </select>
-            <div className="toggle-container">
+            <div className='toggle-container'>
               <input
-                type="checkbox"
-                className="checkbox"
-                id="fahrenheit-checkbox"
+                type='checkbox'
+                className='checkbox'
+                id='fahrenheit-checkbox'
                 onChange={toggleFahrenheit}
               />
-              <label htmlFor="fahrenheit-checkbox" className="label">
+              <label htmlFor='fahrenheit-checkbox' className='label'>
                 <RiFahrenheitFill />
                 <RiCelsiusFill />
-                <div className="ball" />
+                <div className='ball' />
               </label>
             </div>
           </div>
           {loading ? (
-            <div className="loader"></div>
+            <div className='loader'></div>
           ) : (
             <span>
               {weatherData.length === 0 ? (
-                <div className="nodata">
+                <div className='nodata'>
                   <h1>{noData}</h1>
                   {noData === 'Location Not Found' ? (
                     <>
                       <img
                         src={Astronaut}
-                        alt="an astronaut lost in the space"
+                        alt='an astronaut lost in the space'
                       />
                       <p>Oh oh! We've lost in the space finding that place.</p>
                     </>
@@ -256,7 +256,7 @@ function App() {
                     <>
                       <img
                         src={SearchPlace}
-                        alt="a person thinking about what place to find"
+                        alt='a person thinking about what place to find'
                       />
                       <p style={{ padding: '20px' }}>
                         Don't worry, if you don't know what search, try with:
@@ -267,7 +267,7 @@ function App() {
                 </div>
               ) : (
                 <>
-                  <h1 className="centerTextOnMobile">{t('today')}</h1>
+                  <h1 className='centerTextOnMobile'>{t('today')}</h1>
                   <DetailsCard
                     weather_icon={weatherIcon}
                     data={weatherData}
@@ -275,10 +275,10 @@ function App() {
                     isFahrenheitMode={isFahrenheitMode}
                     degreeSymbol={degreeSymbol}
                   />
-                  <h1 className="title centerTextOnMobile">
+                  <h1 className='title centerTextOnMobile'>
                     {t('more-on')} {city}
                   </h1>
-                  <ul className="summary">
+                  <ul className='summary'>
                     {weatherData.list.map((days, index) => (
                       <SummaryCard
                         key={index}

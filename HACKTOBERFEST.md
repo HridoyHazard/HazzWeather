@@ -1,5 +1,3 @@
-
-
 ## Contribution (Hacktoberfest2022)
 
 ### Welcome to hacktoberfest 2022 Public Repository. 👨🏻‍💻
@@ -10,15 +8,18 @@ HACKTOBERFEST IS DIGITALOCEAN’S ANNUAL EVENT THAT ENCOURAGES PEOPLE TO CONTRIB
 
 https://hacktoberfest.digitalocean.com/</p>
 
------
+---
 
-### What can You contribute ⚠️ 
-* You can go through the issues tab in the repo and check out the issue you are able to solve.
-* Or you can create your own issue suggesting any changes.
------
+### What can You contribute ⚠️
 
-### Process are as follows :- 
-* Login using github @ [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
-* Create four valid pull requests (PRs) between 1st - 31st October
+- You can go through the issues tab in the repo and check out the issue you are able to solve.
+- Or you can create your own issue suggesting any changes.
 
-------
+---
+
+### Process are as follows :-
+
+- Login using github @ [Hacktoberfest](https://hacktoberfest.digitalocean.com/)
+- Create four valid pull requests (PRs) between 1st - 31st October
+
+---

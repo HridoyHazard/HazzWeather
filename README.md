@@ -1,12 +1,15 @@
+# [HazzWeather](https://effulgent-brioche-795ac4.netlify.app/)
+
 ## _The Only Weather App You Need !_
+
 ![image](https://user-images.githubusercontent.com/71395891/195014989-9760cf7c-a410-424f-a144-fc44f0a6b532.png)
 
-[Live Link](https://effulgent-brioche-795ac4.netlify.app/)
-
 ## About
+
 Weather Application created using ReactJS and APIs provided by OpenAPI.org.
+
 - [Contributing Guidelines](https://github.com/HridoyHazard/HazzWeather/blob/main/CONTRIBUTING.md)
--  [About Hacktoberfest](https://github.com/HridoyHazard/HazzWeather/blob/main/HACKTOBERFEST.md)
+- [About Hacktoberfest](https://github.com/HridoyHazard/HazzWeather/blob/main/HACKTOBERFEST.md)
 
 ## Features
 
@@ -16,20 +19,24 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 - Animatation According To Weather Condition.
 
 ## Setup Guide
-- Make a `.env` file and copy the contents of `.example.env` into that file.
-- Generate your own API key from `openweathermap.org`.
-- Install the node modules with `npm install`.
-- Run the application using `npm run start`.
+
+- Make a `.env` file.
+- Make an account on [OpenWeather.org](https://openweathermap.org/)
+- Click on your `avatar/uesrName` in navbar.
+- Click on `My API Keys`.
+- Generate a `key` if there is none.
+- Copy the `Key` and paste in `.env` file.
+- Install the node modules with `npm i`.
+- Run the application using `npm start`.
 
 ## REPO STATUS
+
+<div align="center">
+
 ![GitHub PR Open](https://img.shields.io/github/issues-pr/HridoyHazard/HazzWeather?style=for-the-badge&color=aqua)
 ![GitHub PR closed](https://img.shields.io/github/issues-pr-closed-raw/HridoyHazard/HazzWeather?style=for-the-badge&color=blue)
 ![GitHub language count](https://img.shields.io/github/languages/count/HridoyHazard/HazzWeather?style=for-the-badge&color=brightgreen)
-<br><br>
 
-
-
-<br>
-<div align="center">
 Show some ❤️ by starring this awesome repository!
+
 </div>
