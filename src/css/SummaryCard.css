@@ -44,8 +44,7 @@
     height: auto;
     padding: 0.5rem;
   }
-  .summary > li:nth-child(odd){
+  .summary > li:nth-child(odd) {
     border-left: none;
   }
-
 }
