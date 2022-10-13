@@ -6,7 +6,7 @@
     "more-on": "Selengkapnya",
     "no-data": "Tidak Ada Data",
     "unknown-location": "Lokasi Tidak Diketahui",
-    "realFell": "Suhu",
+    "realFeel": "Suhu",
     "cover": "Awan Tertutup",
     "humidity": "Kelembaban",
     "min-temp": "Min Temp",
@@ -16,7 +16,8 @@
       "es": "Spanyol",
       "fr": "Prancis",
       "id": "Indonesia",
-      "ta": "Tamil"
+      "ta": "Tamil",
+      "zh": "Cina"
     }
   }
 }

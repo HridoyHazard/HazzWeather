@@ -6,7 +6,7 @@
     "more-on": "Plus dans",
     "no-data": "Il n'y pas données",
     "unknown-location": "lieu inconnu",
-    "realFell": "Sentiment royal",
+    "realFeel": "Sentiment royal",
     "humidity": "Humidité",
     "cover": "Couverture",
     "min-temp": "Min Temp",
@@ -16,7 +16,8 @@
       "es": "Espagnol",
       "fr": "Français",
       "id": "Indonesia",
-      "ta": "Tamil"
+      "ta": "Tamil",
+      "zh": "Chinois"
     }
   }
 }
