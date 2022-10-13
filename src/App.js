@@ -180,7 +180,7 @@ function App() {
             </div>
           </div>
           <div className='search'>
-            <h2>{t('title')}</h2>
+            <h2 style={{marginRight:currentLanguage==="es"|| "fr"?'10px':'0px'}}>{t('title')}</h2>
             <hr />
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
@@ -222,6 +222,7 @@ function App() {
               <option value='fr'>{t('languages.fr')}</option>
               <option value='id'>{t('languages.id')}</option>
               <option value='ta'>{t('languages.ta')}</option>
+              <option value='zh'>{t('languages.zh')}</option>
             </select>
             <div className='toggle-container'>
               <input
