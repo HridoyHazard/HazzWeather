@@ -161,6 +161,7 @@ body {
   font-weight: bold;
   text-align: center;
   color: #090a14;
+  margin: 0px 25px;
 }
 .search hr {
   border-bottom: 3px solid #ffff;
