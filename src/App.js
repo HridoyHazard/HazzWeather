@@ -180,7 +180,7 @@ function App() {
             </div>
           </div>
           <div className='search'>
-            <h2>{t('title')}</h2>
+            <h2 style={{marginRight:currentLanguage==="es"|| "fr"?'10px':'0px'}}>{t('title')}</h2>
             <hr />
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
