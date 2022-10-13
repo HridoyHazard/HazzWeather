@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "title": "天气APP，你只需要这个",
+    "today": "今天",
+    "explore": "#探索 ？",
+    "more-on": "更多",
+    "no-data": "没有数据",
+    "unknown-location": "地点不详",
+    "realFeel": "体感温度",
+    "cover": "云量",
+    "humidity": "湿度",
+    "min-temp": "最低温度",
+    "max-temp": "最高温度",
+    "languages": {
+      "en": "英语",
+      "es": "西班牙语",
+      "fr": "法语",
+      "id": "印尼语",
+      "ta": "泰米尔语",
+      "zh": "简体中文"
+    }
+  }
+}
