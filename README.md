@@ -15,8 +15,8 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 
 - Type the name of city whose weather has to be known OR allow location access(to check weather of present location).
 - Sound customised to selected city's weather played in the background.
-- Displays present weather conditions(Temperature, Humidity, Cloud Cover) along with forecasts for the future.
-- Animatation According To Weather Condition.
+- Displays the present weather conditions (Temperature, Humidity, Cloud Cover) along with forecasts for the future.
+- Animation According To Weather Condition.
 
 ## Setup Guide
 
@@ -44,7 +44,7 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 
 - Before Contribute Please read [CONTRIBUTING.md](https://github.com/HridoyHazard/HazzWeather/blob/main/CONTRIBUTING.md) and [CODE_OF_CONDUCT.md](https://github.com/HridoyHazard/HazzWeather/blob/main/CODE_OF_CONDUCT.md)
 
-- Create an issue of the project or a feature you would like to add in the project and get the task assigned for youself.(Issue can be any bug fixes or any feature you want to add in this project).
+- Create an issue of the project or a feature you would like to add in the project and get the task assigned to you.(Issue can be any bug fixes or any feature you want to add in this project).
 
 - Fork the repo to your Github.<br/>
 
