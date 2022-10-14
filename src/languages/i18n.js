@@ -7,6 +7,7 @@ import id from './id.json';
 import ta from './ta.json';
 import bn from './bn.json';
 import zh from './zh.json';
+import ptBR from './pt-BR.json';
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3',
@@ -20,6 +21,7 @@ i18n.use(initReactI18next).init({
     ta: ta,
     bn: bn,
     zh: zh,
+    ptBR: ptBR,
   },
   interpolation: {
     escapeValue: false, // react already safes from xss
