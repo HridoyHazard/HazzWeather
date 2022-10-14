@@ -99,8 +99,7 @@ function App() {
       }, 500);
       setCity(`${data.city.name}, ${data.city.country}`);
       setWeatherIcon(
-        `${
-          'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
+        `${'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
         }@4x.png`
       );
     } catch (error) {
@@ -123,9 +122,8 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${
-            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-          }`,
+          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+            }`,
           top: '-10%',
           right: '0',
         }}
@@ -133,9 +131,8 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${
-            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-          }`,
+          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+            }`,
           top: '36%',
           left: '-6rem',
         }}
@@ -144,9 +141,8 @@ function App() {
         <div
           className='form-container'
           style={{
-            backgroundImage: `url(${
-              weatherData ? BackgroundImage(weatherData) : LakeBackground
-            })`,
+            backgroundImage: `url(${weatherData ? BackgroundImage(weatherData) : LakeBackground
+              })`,
           }}
         >
           <div className='name'>
@@ -180,7 +176,7 @@ function App() {
             </div>
           </div>
           <div className='search'>
-            <h2 style={{marginRight:currentLanguage==="es"|| "fr"?'10px':'0px'}}>{t('title')}</h2>
+            <h2 style={{ marginRight: currentLanguage === "es" || "fr" ? '10px' : '0px' }}>{t('title')}</h2>
             <hr />
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
@@ -216,13 +212,13 @@ function App() {
               onChange={(e) => handleLanguage(e)}
             >
               <option selected value='en'>
-                {t('languages.en')}
+                English
               </option>
-              <option value='es'>{t('languages.es')}</option>
-              <option value='fr'>{t('languages.fr')}</option>
-              <option value='id'>{t('languages.id')}</option>
-              <option value='ta'>{t('languages.ta')}</option>
-              <option value='zh'>{t('languages.zh')}</option>
+              <option value='es'>Español</option>
+              <option value='fr'>Français</option>
+              <option value='id'>Indonesia</option>
+              <option value='ta'>தமிழ்</option>
+              <option value='zh'>简体中文</option>
             </select>
             <div className='toggle-container'>
               <input
