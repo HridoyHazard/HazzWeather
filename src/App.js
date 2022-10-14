@@ -222,6 +222,7 @@ function App() {
               <option value='fr'>{t('languages.fr')}</option>
               <option value='id'>{t('languages.id')}</option>
               <option value='ta'>{t('languages.ta')}</option>
+              <option value='bn'>{t('languages.bn')}</option>
               <option value='zh'>{t('languages.zh')}</option>
               <option value='ptBR'>{t('languages.ptBR')}</option>
             </select>
