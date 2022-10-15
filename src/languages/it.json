@@ -1,0 +1,24 @@
+{
+  "translation": {
+    "title": "L'unica app meteo che ti servirà!",
+    "today": "Oggi",
+    "explore": "#Esplora ?",
+    "more-on": "More On",
+    "no-data": "Ancora nessun dato",
+    "unknown-location": "Posizione sconosciuta",
+    "realFeel": "Percepita",
+    "cover": "Nuvolosità",
+    "humidity": "Umidità",
+    "min-temp": "Temp. minima",
+    "max-temp": "Temp. massima",
+    "languages": {
+      "en": "Inglese",
+      "es": "Spagnolo",
+      "fr": "Francese",
+      "id": "Indonesiano",
+      "it": "Italiano",
+      "ta": "Tamil",
+      "zh": "Cinese semplificato"
+    }
+  }
+}
