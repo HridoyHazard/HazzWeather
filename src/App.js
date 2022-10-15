@@ -51,7 +51,7 @@ function App() {
     changeLanguage(currentLanguage);
 
     // eslint-disable-next-line
-  }, [currentLanguage]);
+  }, []);
 
   const toggleDark = () => {
     document.body.classList.toggle('dark');
