@@ -29,7 +29,7 @@ function App() {
   const [weatherIcon, setWeatherIcon] = useState(
     `https://openweathermap.org/img/wn/10n@2x.png`
   );
-  const [currentLanguage, setLanguage] = useState('en');
+  const [currentLanguage, setLanguage] = useState( localStorage.getItem('language') || 'en');
   const [loading, setLoading] = useState(false);
   const [backgroundSoundEnabled, setBackgroundSoundEnabled] = useState(true);
   const [isFahrenheitMode, setIsFahrenheitMode] = useState(false);
@@ -63,6 +63,7 @@ function App() {
 
   const handleLanguage = (event) => {
     changeLanguage(event.target.value);
+    localStorage.setItem('language', event.target.value);
   };
 
   const changeLanguage = (value, location) => {
