@@ -22,10 +22,10 @@ import BackgroundColor from './components/BackgroundColor';
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const { t, i18n } = useTranslation();
-  const [noData, setNoData] = useState(t('no-data'));
+  const [noData, setNoData] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [weatherData, setWeatherData] = useState([]);
-  const [city, setCity] = useState(t('unknown-location'));
+  const [city, setCity] = useState();
   const [weatherIcon, setWeatherIcon] = useState(
     `https://openweathermap.org/img/wn/10n@2x.png`
   );
@@ -177,7 +177,7 @@ function App() {
             </div>
             <div className='city'>
               <TbMapSearch />
-              <p>{city}</p>
+              <p>{city ?? t('unknown-location')}</p>
             </div>
           </div>
           <div className='search'>
@@ -223,7 +223,9 @@ function App() {
               <option value='fr'>{t('languages.fr')}</option>
               <option value='id'>{t('languages.id')}</option>
               <option value='ta'>{t('languages.ta')}</option>
+              <option value='bn'>{t('languages.bn')}</option>
               <option value='zh'>{t('languages.zh')}</option>
+              <option value='ptBR'>{t('languages.ptBR')}</option>
             </select>
             <div className='toggle-container'>
               <input
@@ -245,7 +247,7 @@ function App() {
             <span>
               {weatherData.length === 0 ? (
                 <div className='nodata'>
-                  <h1>{noData}</h1>
+                  <h1>{noData ?? t('no-data')}</h1>
                   {noData === 'Location Not Found' ? (
                     <>
                       <img
@@ -278,7 +280,7 @@ function App() {
                     degreeSymbol={degreeSymbol}
                   />
                   <h1 className='title centerTextOnMobile'>
-                    {t('more-on')} {city}
+                    {t('more-on')} {city ?? t('unknown-location')}
                   </h1>
                   <ul className='summary'>
                     {weatherData.list.map((days, index) => (
