@@ -263,7 +263,7 @@ function App() {
                         src={Astronaut}
                         alt='an astronaut lost in the space'
                       />
-                      <p>Oh oh! We've lost in the space finding that place.</p>
+                      <p>Oh oh! We're lost in space finding that place.</p>
                     </>
                   ) : (
                     <>
@@ -272,7 +272,7 @@ function App() {
                         alt='a person thinking about what place to find'
                       />
                       <p style={{ padding: '20px' }}>
-                        Don't worry, if you don't know what search, try with:
+                        Don't worry, if you don't know what to search for, try:
                         Dhaka, Canada or maybe USA.
                       </p>
                     </>
