@@ -1,23 +1,23 @@
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
 import {
   TbMapSearch,
-  TbSearch,
-  TbVolume,
   TbMoon,
+  TbSearch,
   TbSun,
+  TbVolume,
   TbVolumeOff,
 } from 'react-icons/tb';
-import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
-import { useState, useMemo } from 'react';
 import DetailsCard from './components/DetailsCard';
 import SummaryCard from './components/SummaryCard';
-import { useTranslation } from 'react-i18next';
 import './languages/i18n';
 
+import LakeBackground from './asset/lake-background.jpg';
 import Astronaut from './asset/not-found.svg';
 import SearchPlace from './asset/search.svg';
-import LakeBackground from './asset/lake-background.jpg';
-import BackgroundImage from './components/BackgroundImage';
 import BackgroundColor from './components/BackgroundColor';
+import BackgroundImage from './components/BackgroundImage';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -29,7 +29,9 @@ function App() {
   const [weatherIcon, setWeatherIcon] = useState(
     `https://openweathermap.org/img/wn/10n@2x.png`
   );
-  const [currentLanguage, setLanguage] = useState( localStorage.getItem('language') || 'en');
+  const [currentLanguage, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'en';
+  });
   const [loading, setLoading] = useState(false);
   const [backgroundSoundEnabled, setBackgroundSoundEnabled] = useState(true);
   const [isFahrenheitMode, setIsFahrenheitMode] = useState(false);
@@ -42,6 +44,14 @@ function App() {
   const activate = () => {
     setActive(true);
   };
+
+  useEffect(() => {
+    if (currentLanguage === 'en') return;
+
+    changeLanguage(currentLanguage);
+
+    // eslint-disable-next-line
+  }, [currentLanguage]);
 
   const toggleDark = () => {
     document.body.classList.toggle('dark');
@@ -100,7 +110,8 @@ function App() {
       }, 500);
       setCity(`${data.city.name}, ${data.city.country}`);
       setWeatherIcon(
-        `${'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
+        `${
+          'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
         }@4x.png`
       );
     } catch (error) {
@@ -123,8 +134,9 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-            }`,
+          background: `${
+            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+          }`,
           top: '-10%',
           right: '0',
         }}
@@ -132,8 +144,9 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-            }`,
+          background: `${
+            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+          }`,
           top: '36%',
           left: '-6rem',
         }}
@@ -142,8 +155,9 @@ function App() {
         <div
           className='form-container'
           style={{
-            backgroundImage: `url(${weatherData ? BackgroundImage(weatherData) : LakeBackground
-              })`,
+            backgroundImage: `url(${
+              weatherData ? BackgroundImage(weatherData) : LakeBackground
+            })`,
           }}
         >
           <div className='name'>
@@ -209,7 +223,7 @@ function App() {
           <div className='info-inner-container'>
             <select
               className='selected-languange'
-              value={currentLanguage}
+              defaultValue={currentLanguage}
               onChange={(e) => handleLanguage(e)}
             >
               <option selected value='en'>
@@ -229,6 +243,7 @@ function App() {
               <option value='bn'>{t('languages.bn')}</option>
               <option value='zh'>{t('languages.zh')}</option>
               <option value='ptBR'>{t('languages.ptBR')}</option>
+              <option value='neNP'>{t('languages.neNP')}</option>
             </select>
             <div className='toggle-container'>
               <input
