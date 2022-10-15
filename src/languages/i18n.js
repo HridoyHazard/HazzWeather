@@ -4,9 +4,11 @@ import en from './en.json';
 import es from './es.json';
 import fr from './fr.json';
 import id from './id.json';
+import it from './it.json';
 import ta from './ta.json';
 import bn from './bn.json';
 import zh from './zh.json';
+import ptBR from './pt-BR.json';
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3',
@@ -17,9 +19,11 @@ i18n.use(initReactI18next).init({
     en: en,
     fr: fr,
     id: id,
+    it: it,
     ta: ta,
     bn: bn,
     zh: zh,
+    ptBR: ptBR,
   },
   interpolation: {
     escapeValue: false, // react already safes from xss

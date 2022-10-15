@@ -7,7 +7,7 @@ function MoreInfoCard({ data }) {
     return (
         <div className='more-info'>
             <p className=''>
-                {t('RealFeel')}:{' '}
+                {t('realFeel')}:{' '}
                 <span>
                     {formattedData.feels_like}
                     {degreeSymbol}
