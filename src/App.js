@@ -1,35 +1,37 @@
+import { useEffect, useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
 import {
   TbMapSearch,
-  TbSearch,
-  TbVolume,
   TbMoon,
+  TbSearch,
   TbSun,
+  TbVolume,
   TbVolumeOff,
 } from 'react-icons/tb';
-import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
-import { useState, useMemo } from 'react';
 import DetailsCard from './components/DetailsCard';
 import SummaryCard from './components/SummaryCard';
-import { useTranslation } from 'react-i18next';
 import './languages/i18n';
 
+import LakeBackground from './asset/lake-background.jpg';
 import Astronaut from './asset/not-found.svg';
 import SearchPlace from './asset/search.svg';
-import LakeBackground from './asset/lake-background.jpg';
-import BackgroundImage from './components/BackgroundImage';
 import BackgroundColor from './components/BackgroundColor';
+import BackgroundImage from './components/BackgroundImage';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const { t, i18n } = useTranslation();
-  const [noData, setNoData] = useState(t('no-data'));
+  const [noData, setNoData] = useState();
   const [searchTerm, setSearchTerm] = useState('');
   const [weatherData, setWeatherData] = useState([]);
-  const [city, setCity] = useState(t('unknown-location'));
+  const [city, setCity] = useState();
   const [weatherIcon, setWeatherIcon] = useState(
     `https://openweathermap.org/img/wn/10n@2x.png`
   );
-  const [currentLanguage, setLanguage] = useState('en');
+  const [currentLanguage, setLanguage] = useState(() => {
+    return localStorage.getItem('language') || 'en';
+  });
   const [loading, setLoading] = useState(false);
   const [backgroundSoundEnabled, setBackgroundSoundEnabled] = useState(true);
   const [isFahrenheitMode, setIsFahrenheitMode] = useState(false);
@@ -42,6 +44,14 @@ function App() {
   const activate = () => {
     setActive(true);
   };
+
+  useEffect(() => {
+    if (currentLanguage === 'en') return;
+
+    changeLanguage(currentLanguage);
+
+    // eslint-disable-next-line
+  }, [currentLanguage]);
 
   const toggleDark = () => {
     document.body.classList.toggle('dark');
@@ -63,6 +73,7 @@ function App() {
 
   const handleLanguage = (event) => {
     changeLanguage(event.target.value);
+    localStorage.setItem('language', event.target.value);
   };
 
   const changeLanguage = (value, location) => {
@@ -176,11 +187,18 @@ function App() {
             </div>
             <div className='city'>
               <TbMapSearch />
-              <p>{city}</p>
+              <p>{city ?? t('unknown-location')}</p>
             </div>
           </div>
           <div className='search'>
-            <h2 style={{marginRight:currentLanguage==="es"|| "fr"?'10px':'0px'}}>{t('title')}</h2>
+            <h2
+              style={{
+                marginRight: currentLanguage === 'es' || 'fr' ? '10px' : '0px',
+              }}
+            >
+              {t('title')}
+            </h2>
+
             <hr />
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
@@ -212,18 +230,28 @@ function App() {
           <div className='info-inner-container'>
             <select
               className='selected-languange'
-              value={currentLanguage}
+              defaultValue={currentLanguage}
               onChange={(e) => handleLanguage(e)}
             >
               <option selected value='en'>
-                {t('languages.en')}
+                English
               </option>
+              <option value='es'>Español</option>
+              <option value='fr'>Français</option>
+              <option value='id'>Indonesia</option>
+              <option value='ta'>தமிழ்</option>
+              <option value='bn'>বাংলা</option>
+              <option value='zh'>简体中文</option>
               <option value='es'>{t('languages.es')}</option>
               <option value='fr'>{t('languages.fr')}</option>
               <option value='id'>{t('languages.id')}</option>
+              <option value='it'>{t('languages.it')}</option>
               <option value='ta'>{t('languages.ta')}</option>
               <option value='mr'>{t('languages.mr')}</option>
+              <option value='bn'>{t('languages.bn')}</option>
               <option value='zh'>{t('languages.zh')}</option>
+              <option value='ptBR'>{t('languages.ptBR')}</option>
+              <option value='neNP'>{t('languages.neNP')}</option>
             </select>
             <div className='toggle-container'>
               <input
@@ -245,14 +273,14 @@ function App() {
             <span>
               {weatherData.length === 0 ? (
                 <div className='nodata'>
-                  <h1>{noData}</h1>
+                  <h1>{noData ?? t('no-data')}</h1>
                   {noData === 'Location Not Found' ? (
                     <>
                       <img
                         src={Astronaut}
                         alt='an astronaut lost in the space'
                       />
-                      <p>Oh oh! We've lost in the space finding that place.</p>
+                      <p>Oh oh! We're lost in space finding that place.</p>
                     </>
                   ) : (
                     <>
@@ -261,7 +289,7 @@ function App() {
                         alt='a person thinking about what place to find'
                       />
                       <p style={{ padding: '20px' }}>
-                        Don't worry, if you don't know what search, try with:
+                        Don't worry, if you don't know what to search for, try:
                         Dhaka, Canada or maybe USA.
                       </p>
                     </>
@@ -278,7 +306,7 @@ function App() {
                     degreeSymbol={degreeSymbol}
                   />
                   <h1 className='title centerTextOnMobile'>
-                    {t('more-on')} {city}
+                    {t('more-on')} {city ?? t('unknown-location')}
                   </h1>
                   <ul className='summary'>
                     {weatherData.list.map((days, index) => (

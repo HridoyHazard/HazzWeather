@@ -16,9 +16,13 @@
       "es": "Spanyol",
       "fr": "Prancis",
       "id": "Indonesia",
+      "it": "Italia",
       "ta": "Tamil",
       "mr":"Marathi",
-      "zh": "Cina"
+      "bn": "Bangla",
+      "zh": "Cina",
+      "ptBR": "Portugis (Brasil)",
+      "neNP": "Nepali"
     }
   }
 }

@@ -16,9 +16,16 @@
       "es": "Spanish",
       "fr": "French",
       "id": "Indonesia",
+      "it": "Italian",
       "ta": "Tamil",
+
       "mr":"Marathi",
-      "zh": "Simplified Chinese"
+      
+      "bn": "Bangla",
+      "zh": "Simplified Chinese",
+      "ptBR": "Portuguese (Brazil)",
+      "neNP": "Nepali"
+
     }
   }
 }

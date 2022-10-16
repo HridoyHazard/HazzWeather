@@ -1,0 +1,27 @@
+{
+  "translation": {
+    "title": "मौसम एप तपाईलाई चाहिने!",
+    "today": "आज",
+    "explore": "#अन्वेषण ?",
+    "more-on": "थप",
+    "no-data": "कुनै सुचना छैन",
+    "unknown-location": "आपरिचित स्थान",
+    "realFeel": "वास्तविक अनुभूति",
+    "cover": "बादल",
+    "humidity": "आर्द्रता",
+    "min-temp": "न्यूनतम तापक्रम",
+    "max-temp": "अधिकतम तापमान",
+    "languages": {
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French",
+      "id": "Indonesia",
+      "it": "Italian",
+      "ta": "Tamil",
+      "bn": "Bangla",
+      "zh": "Simplified Chinese",
+      "ptBR": "Portuguese (Brazil)",
+      "neNP": "Nepali"
+    }
+  }
+}
