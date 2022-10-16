@@ -242,6 +242,7 @@ function App() {
               <option value='ta'>தமிழ்</option>
               <option value='bn'>বাংলা</option>
               <option value='zh'>简体中文</option>
+              <option value='ukr'>Ukrainian</option>
               <option value='es'>{t('languages.es')}</option>
               <option value='fr'>{t('languages.fr')}</option>
               <option value='id'>{t('languages.id')}</option>

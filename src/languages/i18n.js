@@ -8,6 +8,7 @@ import id from './id.json';
 import it from './it.json';
 import neNP from './ne-NP.json';
 import ptBR from './pt-BR.json';
+import ukr from './ukr.json';
 import ta from './ta.json';
 import zh from './zh.json';
 
@@ -26,6 +27,7 @@ i18n.use(initReactI18next).init({
     zh: zh,
     ptBR: ptBR,
     neNP: neNP,
+    ukr: ukr,
   },
   interpolation: {
     escapeValue: false, // react already safes from xss
