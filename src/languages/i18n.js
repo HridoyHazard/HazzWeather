@@ -9,7 +9,6 @@ import it from './it.json';
 import neNP from './ne-NP.json';
 import ptBR from './pt-BR.json';
 import ta from './ta.json';
-import bn from './bn.json';
 import mr from './mr.json';
 import zh from './zh.json';
 
