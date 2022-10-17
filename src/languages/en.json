@@ -18,14 +18,13 @@
       "id": "Indonesia",
       "it": "Italian",
       "ta": "Tamil",
-
       "mr":"Marathi",
-      
       "bn": "Bangla",
       "zh": "Simplified Chinese",
       "ptBR": "Portuguese (Brazil)",
       "neNP": "Nepali"
-
+      "neNP": "Nepali",
+      "ukr": "Ukrainian"
     }
   }
 }
