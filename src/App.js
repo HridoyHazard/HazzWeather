@@ -110,8 +110,7 @@ function App() {
       }, 500);
       setCity(`${data.city.name}, ${data.city.country}`);
       setWeatherIcon(
-        `${
-          'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
+        `${'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
         }@4x.png`
       );
     } catch (error) {
@@ -134,9 +133,8 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${
-            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-          }`,
+          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+            }`,
           top: '-10%',
           right: '0',
         }}
@@ -144,9 +142,8 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${
-            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-          }`,
+          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+            }`,
           top: '36%',
           left: '-6rem',
         }}
@@ -155,9 +152,8 @@ function App() {
         <div
           className='form-container'
           style={{
-            backgroundImage: `url(${
-              weatherData ? BackgroundImage(weatherData) : LakeBackground
-            })`,
+            backgroundImage: `url(${weatherData ? BackgroundImage(weatherData) : LakeBackground
+              })`,
           }}
         >
           <div className='name'>
@@ -252,6 +248,7 @@ function App() {
               <option value='zh'>{t('languages.zh')}</option>
               <option value='ptBR'>{t('languages.ptBR')}</option>
               <option value='neNP'>{t('languages.neNP')}</option>
+              <option value='he'>{t('languages.he')}</option>
             </select>
             <div className='toggle-container'>
               <input
