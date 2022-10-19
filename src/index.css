@@ -21,15 +21,17 @@
   --statsColor: #7c7979;
 }
 
-.dark {
-  --bgColor1: #262424;
-  --bgColor2: #191616;
-  --blurBg: #296579;
-  --cardColor: rgba(124, 124, 137, 0.64);
-  --textColor: #fff;
-  --subHeadingColor: rgb(255, 255, 255);
-  --tempColor: #9ee4e6;
-  --statsColor: #e0e5ef;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgColor1: #262424;
+    --bgColor2: #191616;
+    --blurBg: #296579;
+    --cardColor: rgba(124, 124, 137, 0.64);
+    --textColor: #fff;
+    --subHeadingColor: rgb(255, 255, 255);
+    --tempColor: #9ee4e6;
+    --statsColor: #e0e5ef;
+  }
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
