@@ -445,8 +445,10 @@ body {
   height: 20px;
   background-color: white;
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 0;
+  left: 3px;
+  bottom: 0;
+  margin: auto;
   border-radius: 50%;
   transition: transform 0.2s linear;
 }
