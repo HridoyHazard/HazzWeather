@@ -247,6 +247,18 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
+
+  .label{
+    width: 54px !important;
+    height: 31px !important;
+  }
+
+  .ball{
+    width: 23px !important;
+    height: 23px !important;
+    border-radius: 43% !important;
+  }
+
   .content {
     display: grid;
     grid-template-columns: 99%;
