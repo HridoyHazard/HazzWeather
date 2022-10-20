@@ -236,7 +236,6 @@ function App() {
               <option value='fr'>Français</option>
               <option value='id'>Indonesia</option>
               <option value='ta'>தமிழ்</option>
-              <option value='bn'>বাংলা</option>
               <option value='zh'>简体中文</option>
               <option value='ukr'>Ukrainian</option>
               <option value='es'>{t('languages.es')}</option>
