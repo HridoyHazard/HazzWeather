@@ -100,6 +100,7 @@ function App() {
       let data = await res.json();
       if (data.cod !== '200') {
         setNoData('Location Not Found');
+        setCity('Unknown Location')
         setTimeout(() => {
           setLoading(false);
         }, 500);
