@@ -450,6 +450,7 @@ body {
   justify-content: space-between;
   padding: 5px;
   position: relative;
+  cursor: pointer;
 }
 
 .ball {
