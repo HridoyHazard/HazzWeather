@@ -130,6 +130,7 @@ function App() {
   window.addEventListener('load', function () {
     navigator.geolocation.getCurrentPosition(myIP);
   });
+
   return (
     <div>
       <script>
