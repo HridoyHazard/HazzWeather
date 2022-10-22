@@ -269,6 +269,46 @@ function App() {
                   <div className='ball' />
                 </label>
               </div>
+        </div>
+        <div className='info-container'>
+          <div className='info-inner-container'>
+            <select
+              className='selected-languange'
+              defaultValue={currentLanguage}
+              onChange={(e) => handleLanguage(e)}
+            >
+              <option selected value='en'>
+                English
+              </option>
+              <option value='es'>Español</option>
+              <option value='fr'>Français</option>
+              <option value='id'>Indonesia</option>
+              <option value='ta'>தமிழ்</option>
+              <option value='zh'>简体中文</option>
+              <option value='ukr'>Ukrainian</option>
+              <option value='es'>{t('languages.es')}</option>
+              <option value='fr'>{t('languages.fr')}</option>
+              <option value='id'>{t('languages.id')}</option>
+              <option value='it'>{t('languages.it')}</option>
+              <option value='ta'>{t('languages.ta')}</option>
+              <option value='bn'>{t('languages.bn')}</option>
+              <option value='zh'>{t('languages.zh')}</option>
+              <option value='ptBR'>{t('languages.ptBR')}</option>
+              <option value='neNP'>{t('languages.neNP')}</option>
+              <option value='he'>{t('languages.he')}</option>
+            </select>
+            <div className='toggle-container'>
+              <input
+                type='checkbox'
+                className='checkbox'
+                id='fahrenheit-checkbox'
+                onChange={toggleFahrenheit}
+              />
+              <label htmlFor='fahrenheit-checkbox' className='label'>
+                <RiFahrenheitFill />
+                <RiCelsiusFill />
+                <div className='ball' />
+              </label>
             </div>
             {loading ? (
               <div className='loader'></div>
