@@ -28,7 +28,7 @@
     --blurBg: #296579;
     --cardColor: rgba(124, 124, 137, 0.64);
     --textColor: #fff;
-    --subHeadingColor: rgb(255, 255, 255);
+    --subHeadingColor: darkgray;
     --tempColor: #9ee4e6;
     --statsColor: #e0e5ef;
   }
@@ -174,7 +174,7 @@ body {
   font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
-  color: #090a14;
+  color: whitesmoke;
   font-family: 'Josefin Sans', 'Open Sans', sans-serif;
 }
 
