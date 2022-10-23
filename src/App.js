@@ -18,6 +18,7 @@ import Astronaut from './asset/not-found.svg';
 import SearchPlace from './asset/search.svg';
 import BackgroundColor from './components/BackgroundColor';
 import BackgroundImage from './components/BackgroundImage';
+import Animation from './components/Animation';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -158,9 +159,7 @@ function App() {
           }}
         >
           <div className='name'>
-            <div className='logo'>
-              Hazz Weather<br></br>
-            </div>
+            <Animation/>
             <div className='toggle-container'>
               <input
                 type='checkbox'
