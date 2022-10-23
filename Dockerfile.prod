@@ -1,14 +1,6 @@
-FROM node:14-alpine AS base
+FROM node:14-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-
-FROM base AS development
-RUN npm i
-COPY . .
-EXPOSE 3000
-CMD ["npm", "run", "start"]
-
-FROM base AS build
 RUN npm ci --production
 COPY . .
 RUN npm run build
