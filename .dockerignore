@@ -1,8 +1,8 @@
-/build
-/node_modules
-.env
-.vscode/
-
+**/node_modules/
+**/dist
+**/build
+**/coverage
+.git
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
