@@ -12,16 +12,18 @@
     "min-temp": "न्यूनतम तापक्रम",
     "max-temp": "अधिकतम तापमान",
     "languages": {
-      "en": "English",
-      "es": "Spanish",
-      "fr": "French",
-      "id": "Indonesia",
-      "it": "Italian",
-      "ta": "Tamil",
-      "bn": "Bangla",
-      "zh": "Simplified Chinese",
-      "ptBR": "Portuguese (Brazil)",
-      "neNP": "Nepali"
+      "en": "अंग्रेजी",
+      "es": "स्पेनिस",
+      "fr": "फ्रान्सेली",
+      "id": "इन्डोनेसिया",
+      "it": "इटालियन",
+      "ta": "तमिल",
+      "bn": "बंगला",
+      "zh": "सरलीकृत चिनियाँ",
+      "ptBR": "पोर्चुगिज (ब्राजिल)",
+      "neNP": "नेपाली",
+      "he": "हिब्रू",
+      "hnd":"हिन्दी"
     }
   }
 }
