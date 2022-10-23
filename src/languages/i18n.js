@@ -11,14 +11,17 @@ import ptBR from './pt-BR.json';
 import ukr from './ukr.json';
 import ta from './ta.json';
 import zh from './zh.json';
+import hnd from './hnd.json';
+import he from './he.json';
+
 
 i18n.use(initReactI18next).init({
   compatibilityJSON: 'v3',
   lng: 'en',
   fallbackLng: 'en',
   resources: {
-    es: es,
     en: en,
+    es: es,
     fr: fr,
     id: id,
     it: it,
@@ -28,6 +31,8 @@ i18n.use(initReactI18next).init({
     ptBR: ptBR,
     neNP: neNP,
     ukr: ukr,
+    he: he,
+    hnd : hnd
   },
   interpolation: {
     escapeValue: false, // react already safes from xss

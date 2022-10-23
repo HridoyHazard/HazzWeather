@@ -249,6 +249,8 @@ function App() {
               <option value='ptBR'>{t('languages.ptBR')}</option>
               <option value='neNP'>{t('languages.neNP')}</option>
               <option value='he'>{t('languages.he')}</option>
+              <option value='hnd'>{t('languages.hnd')}</option>
+              
             </select>
             <div className='toggle-container'>
               <input
