@@ -53,12 +53,12 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 ### For build and run a production container using Docker (intented for orchestration or deployment in the cloud)
 
 - Install Docker. The best way is to install Docker Desktop, please refer to the docs at https://docs.docker.com/get-docker/.
-- Execute `docker build -f Dockerfile.prod --target production -t hazzweather . --no-cache` or use `make build-prod` to build the image
-- Execute `docker run -d -p 80:80 --env-file .env --name hazzweather_prod hazzweather` or use `make run-prod` to run the container
+- Execute `docker build -f Dockerfile.prod --target production -t hazzweather . --no-cache` or use `make docker-build-prod` to build the image
+- Execute `docker run -d -p 80:80 --env-file .env --name hazzweather_prod hazzweather` or use `make docker-run-prod` to run the container
 - Access to the application with http://localhost
 - To see the actual log of the container, run `docker logs -f hazzweather_prod`, to exit press CTRL+C
-- To stop the container, execute `docker stop hazzweather_prod` or `make stop-prod`
-- If you need to delete the container, execute `docker rm hazzweather_prod` or use `make rm-prod`
+- To stop the container, execute `docker stop hazzweather_prod` or `make docker-stop-prod`
+- If you need to delete the container, execute `docker rm hazzweather_prod` or use `make docker-rm-prod`
 
 ## REPO STATUS
 
