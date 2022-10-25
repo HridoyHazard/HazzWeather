@@ -73,7 +73,6 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
   <img src="https://contrib.rocks/image?repo=HridoyHazard/HazzWeather&&max=817" />
 </a>
 </div>
-
 <br>
 <div align="center">
 <h3>Show some ❤️ by starring this awesome repository!</h3>
