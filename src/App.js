@@ -41,6 +41,35 @@ function App() {
     [isFahrenheitMode]
   );
   const [active, setActive] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  // SETTING THEMES ACCORDING TO DEVICE
+  useEffect(() => {
+    if (
+      window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches
+    ) {
+      setIsDark(true);
+    }
+
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', (event) => {
+        setIsDark(event.matches);
+      });
+  }, [setIsDark]);
+
+  const toggleDark = () => {
+    setIsDark((prev) => !prev);
+  };
 
   const activate = () => {
     setActive(true);
@@ -53,10 +82,6 @@ function App() {
 
     // eslint-disable-next-line
   }, [currentLanguage]);
-
-  const toggleDark = () => {
-    document.body.classList.toggle('dark');
-  };
 
   const toggleFahrenheit = () => {
     setIsFahrenheitMode(!isFahrenheitMode);
@@ -100,7 +125,7 @@ function App() {
       let data = await res.json();
       if (data.cod !== '200') {
         setNoData('Location Not Found');
-        setCity('Unknown Location')
+        setCity('Unknown Location');
         setTimeout(() => {
           setLoading(false);
         }, 500);
@@ -112,7 +137,8 @@ function App() {
       }, 500);
       setCity(`${data.city.name}, ${data.city.country}`);
       setWeatherIcon(
-        `${'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
+        `${
+          'https://openweathermap.org/img/wn/' + data.list[0].weather[0]['icon']
         }@4x.png`
       );
     } catch (error) {
@@ -135,8 +161,9 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-            }`,
+          background: `${
+            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+          }`,
           top: '-10%',
           right: '0',
         }}
@@ -144,8 +171,9 @@ function App() {
       <div
         className='blur'
         style={{
-          background: `${weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
-            }`,
+          background: `${
+            weatherData ? BackgroundColor(weatherData) : '#a6ddf0'
+          }`,
           top: '36%',
           left: '-6rem',
         }}
@@ -154,17 +182,19 @@ function App() {
         <div
           className='form-container'
           style={{
-            backgroundImage: `url(${weatherData ? BackgroundImage(weatherData) : LakeBackground
-              })`,
+            backgroundImage: `url(${
+              weatherData ? BackgroundImage(weatherData) : LakeBackground
+            })`,
           }}
         >
           <div className='name'>
-            <Animation/>
+            <Animation />
             <div className='toggle-container'>
               <input
                 type='checkbox'
                 className='checkbox'
                 id='checkbox'
+                checked={isDark}
                 onChange={toggleDark}
               />
               <label htmlFor='checkbox' className='label'>
@@ -249,7 +279,6 @@ function App() {
               <option value='neNP'>{t('languages.neNP')}</option>
               <option value='he'>{t('languages.he')}</option>
               <option value='hnd'>{t('languages.hnd')}</option>
-              
             </select>
             <div className='toggle-container'>
               <input
