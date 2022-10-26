@@ -5,6 +5,7 @@
 .summary-items:nth-of-type(1) {
   border-left: 0px solid var(--hrColor);
 }
+
 .summary-items > div {
   display: flex;
   flex-direction: column;
@@ -15,16 +16,19 @@
   padding: 0.5rem 0.5rem;
   text-align: center;
 }
+
 .summary-items > div > p:nth-of-type(1) {
   font-size: 1rem;
   font-weight: bold;
   color: var(--tempColor);
 }
+
 .summary-items > div > p:nth-of-type(2) {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .summary-items > div > p:nth-of-type(3) {
   text-transform: uppercase;
   text-align: center;
@@ -32,9 +36,11 @@
   font-size: 0.75rem;
   font-weight: 800;
 }
+
 .summary-items > div > p:nth-of-type(4) {
   border-bottom: 1px solid var(--hrColor);
 }
+
 .summary-items > div > p:nth-of-type(2) img {
   width: 40%;
 }
@@ -44,6 +50,7 @@
     height: auto;
     padding: 0.5rem;
   }
+  
   .summary > li:nth-child(odd) {
     border-left: none;
   }
