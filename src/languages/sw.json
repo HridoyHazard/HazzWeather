@@ -1,0 +1,32 @@
+{
+    "translation": {
+      "title": "Programu ya Hali ya Hewa Pekee Unayohitaji!",
+      "today": "Leo",
+      "explore": "Chunguza?",
+      "more-on": "Zaidi juu ya",
+      "no-data": "Hakuna data bado",
+      "unknown-location": "Mahali pasipojulikana",
+      "realFeel": "Hisia ya kweli",
+      "cover": "jadala la Wingu",
+      "humidity": "Unyenyu",
+      "min-temp": "Kiwango cha chini cha joto",
+      "max-temp": "Kiwango cha juu cha joto",
+      "languages": {
+        "en": "English",
+        "es": "Spanish",
+        "fr": "French",
+        "id": "Indonesia",
+        "it": "Italian",
+        "ta": "Tamil",
+        "bn": "Bangla",
+        "zh": "Simplified Chinese",
+        "ptBR": "Portuguese (Brazil)",
+        "sw": "Swahili",
+        "neNP": "Nepali",
+        "ukr": "Ukrainian",
+        "he": "Hebrew",
+        "hnd": "Hindi"
+      }
+    }
+  }
+  

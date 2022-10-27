@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import bn from './bn.json';
 import en from './en.json';
+import sw from './sw.json';
 import es from './es.json';
 import fr from './fr.json';
 import id from './id.json';
@@ -21,6 +22,7 @@ i18n.use(initReactI18next).init({
   fallbackLng: 'en',
   resources: {
     en: en,
+    sw: sw,
     es: es,
     fr: fr,
     id: id,
