@@ -255,7 +255,7 @@ function App() {
         <div className='info-container'>
           <div className='info-inner-container'>
             <select
-              className='selected-languange'
+              className='selected-language'
               defaultValue={currentLanguage}
               onChange={(e) => handleLanguage(e)}
             >
@@ -276,6 +276,7 @@ function App() {
               <option value='bn'>{t('languages.bn')}</option>
               <option value='zh'>{t('languages.zh')}</option>
               <option value='ptBR'>{t('languages.ptBR')}</option>
+              <option value='sw'>{t('languages.sw')}</option>
               <option value='neNP'>{t('languages.neNP')}</option>
               <option value='he'>{t('languages.he')}</option>
               <option value='hnd'>{t('languages.hnd')}</option>
