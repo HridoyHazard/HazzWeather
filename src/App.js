@@ -19,6 +19,10 @@ import SearchPlace from './asset/search.svg';
 import BackgroundColor from './components/BackgroundColor';
 import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
+// import $ from 'jquery';
+import axios from 'axios';
+// import {Input,Card} from 'antd';
+import {Card} from 'antd';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -62,10 +66,10 @@ function App() {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
 
-  const handleChange = (input) => {
-    const { value } = input.target;
-    setSearchTerm(value);
-  };
+    // const handleChange = (input) => {
+    //   const { value } = input.target;
+    //   setSearchTerm(value);
+    // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -124,6 +128,39 @@ function App() {
   const myIP = (location) => {
     const { latitude, longitude } = location.coords;
     getWeather([latitude, longitude]);
+  };
+
+  // For the autocomplete search box- Places List
+  const [countries,setCountries]=useState([]);
+  const [countryMatch,setCountryMatch]=useState([]);
+
+  useEffect(()=>{
+    const loadCountries=async()=>{
+      const response= await axios.get("https://restcountries.com/v3.1/all");
+      setCountries(response.data);
+    };
+
+    loadCountries();
+  }, []);
+
+  // console.log(countries);
+
+  const searchCountries=(text,input)=>{
+    const {value}=input.target;
+    setSearchTerm(value);
+    console.log("logging");
+    
+    if(!text){
+      setCountryMatch([]);
+    }
+    else{
+      let matches=countries.filter((country)=>{
+        // eslint-disable-next-line no-template-curly-in-string
+        const regex=new RegExp('${text}',"gi");
+        return country.name.match(regex) || country.capital.match(regex);
+      });
+      setCountryMatch(matches);
+    }
   };
 
   // load current location weather info on load
@@ -194,18 +231,63 @@ function App() {
             >
               {t('title')}
             </h2>
-
+          
             <hr />
+
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input
-                type='text'
-                name=''
-                id=''
+                // type='text'
+                // name='country'
+                // id='country'
                 onClick={activate}
                 placeholder={active ? '' : 'Explore cities weather'}
-                onChange={handleChange}
+                onChange={(e)=>searchCountries(e.target.value)}
+                // onChange={searchCountries}
                 required
               />
+              {countryMatch && countryMatch.map((item,index)=>(
+                <div>
+                   {/* eslint-disable-next-line no-template-curly-in-string */}
+                  <Card title={'Country: ${item.name}'}>
+                    capital:{item.capital}
+                  </Card>
+                </div>
+              ))} 
+
+              {/* Auto Functionality Search Box */}
+              
+                {/* <div id="countryList">
+                  {
+                    $(function(){
+
+                      $("#country").keyup(function(){
+                        var query=$(this).val();
+                        if(query!=='')
+                        {
+                          $.ajax({
+                            url:"search.php",
+                            method:"POST",
+                            data:{query:query},
+                            success:function(data)
+                            {
+                              $('#countryList').fadeIn();
+                              $('#countryList').html(data);
+                            }
+                          });
+                        }
+                        else
+                        {
+                          $('#countryList').fadeOut();
+                          $('#countryList').html("");
+                        }
+                      });
+                      $(document).on('click','li',function(){
+                        $('#country').val((this).text());
+                        $('#countryList').fadeOut();
+                      });
+                    })
+                  }
+                </div> */}
               <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
@@ -213,7 +295,9 @@ function App() {
                   }}
                 />
               </button>
+
             </form>
+
             <button
               className='s-icon sound-toggler'
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
