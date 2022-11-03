@@ -19,10 +19,9 @@ import SearchPlace from './asset/search.svg';
 import BackgroundColor from './components/BackgroundColor';
 import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
-// import $ from 'jquery';
+
 import axios from 'axios';
 import {Card} from 'antd';
-// import {Input, Card} from 'antd';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -237,61 +236,21 @@ function App() {
 
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
               <input 
-                // style={{width:"40%",marginTop:"10px"}}
-                // type='text'
-                // name='country'
-                // id='country'
                 onClick={activate}
                 placeholder={active ? '' : 'Explore cities weather'}
                 onChange={(e)=>searchCountries(e.target.value)}
-                // onChange={searchCountries}
                 required
               />
               <div className="list-dropdown">
                 {countryMatch && countryMatch.map((item,index)=>(
                   <div>
-                    {/* <div key={index} style={{marginLeft:"35%",marginTop:"5px"}}> */}
                     {/* eslint-disable-next-line no-template-curly-in-string */}
                     <Card title={`Country: ${item}`}>
-                    {/* <Card style={{width:"50%"}} title={`Country: ${item}`} > */}
                     </Card>
                   </div>
                 ))} 
               </div>
-              {/* Auto Functionality Search Box */}
-              
-                {/* <div id="countryList">
-                  {
-                    $(function(){
 
-                      $("#country").keyup(function(){
-                        var query=$(this).val();
-                        if(query!=='')
-                        {
-                          $.ajax({
-                            url:"search.php",
-                            method:"POST",
-                            data:{query:query},
-                            success:function(data)
-                            {
-                              $('#countryList').fadeIn();
-                              $('#countryList').html(data);
-                            }
-                          });
-                        }
-                        else
-                        {
-                          $('#countryList').fadeOut();
-                          $('#countryList').html("");
-                        }
-                      });
-                      $(document).on('click','li',function(){
-                        $('#country').val((this).text());
-                        $('#countryList').fadeOut();
-                      });
-                    })
-                  }
-                </div> */}
               <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
