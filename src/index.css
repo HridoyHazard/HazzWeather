@@ -246,6 +246,13 @@ body {
   margin-top: 3rem;
 }
 
+.list-dropdown{
+  overflow: scroll;
+  flex-wrap: wrap;
+  /* margin-top:2px; */
+  height:62px;
+}
+
 @media only screen and (max-width: 1024px) {
 
   .label{

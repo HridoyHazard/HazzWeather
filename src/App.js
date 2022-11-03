@@ -21,8 +21,8 @@ import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
 // import $ from 'jquery';
 import axios from 'axios';
-// import {Input,Card} from 'antd';
 import {Card} from 'antd';
+// import {Input, Card} from 'antd';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -137,7 +137,12 @@ function App() {
   useEffect(()=>{
     const loadCountries=async()=>{
       const response= await axios.get("https://restcountries.com/v3.1/all");
-      setCountries(response.data);
+      let arr = []
+      response.data.forEach(element => {
+        arr.push(element.name.official);
+      });
+      setCountries(arr);
+      console.log(arr);
     };
 
     loadCountries();
@@ -145,22 +150,18 @@ function App() {
 
   // console.log(countries);
 
-  const searchCountries=(text,input)=>{
-    const {value}=input.target;
-    setSearchTerm(value);
-    console.log("logging");
-    
-    if(!text){
-      setCountryMatch([]);
-    }
-    else{
+  const searchCountries=(input)=>{
+      // const {value}=input.target;
+      setSearchTerm(input);
+      
       let matches=countries.filter((country)=>{
-        // eslint-disable-next-line no-template-curly-in-string
-        const regex=new RegExp('${text}',"gi");
-        return country.name.match(regex) || country.capital.match(regex);
-      });
+      // eslint-disable-next-line no-template-curly-in-string
+      const regex=new RegExp(`${input}`,"gi");
+      // console.log(regex)
+      return country.match(regex) || country.match(regex);
+    });
       setCountryMatch(matches);
-    }
+      // console.log(countryMatch);
   };
 
   // load current location weather info on load
@@ -235,7 +236,8 @@ function App() {
             <hr />
 
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
-              <input
+              <input 
+                // style={{width:"40%",marginTop:"10px"}}
                 // type='text'
                 // name='country'
                 // id='country'
@@ -245,15 +247,17 @@ function App() {
                 // onChange={searchCountries}
                 required
               />
-              {countryMatch && countryMatch.map((item,index)=>(
-                <div>
-                   {/* eslint-disable-next-line no-template-curly-in-string */}
-                  <Card title={'Country: ${item.name}'}>
-                    capital:{item.capital}
-                  </Card>
-                </div>
-              ))} 
-
+              <div className="list-dropdown">
+                {countryMatch && countryMatch.map((item,index)=>(
+                  <div>
+                    {/* <div key={index} style={{marginLeft:"35%",marginTop:"5px"}}> */}
+                    {/* eslint-disable-next-line no-template-curly-in-string */}
+                    <Card title={`Country: ${item}`}>
+                    {/* <Card style={{width:"50%"}} title={`Country: ${item}`} > */}
+                    </Card>
+                  </div>
+                ))} 
+              </div>
               {/* Auto Functionality Search Box */}
               
                 {/* <div id="countryList">
