@@ -153,6 +153,11 @@ function App() {
       // const {value}=input.target;
       setSearchTerm(input);
       
+      if(!input){
+        setCountryMatch([]);
+      }
+
+      else{
       let matches=countries.filter((country)=>{
       // eslint-disable-next-line no-template-curly-in-string
       const regex=new RegExp(`${input}`,"gi");
@@ -160,6 +165,7 @@ function App() {
       return country.match(regex) || country.match(regex);
     });
       setCountryMatch(matches);
+    }
       // console.log(countryMatch);
   };
 
