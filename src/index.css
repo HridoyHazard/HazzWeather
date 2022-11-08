@@ -293,6 +293,9 @@ body {
   .search h2 {
     font-size: 1.75rem;
   }
+  .input_search{
+    height: 2000px;
+  }
   .search-bar {
     display: flex;
     width: 100%;
