@@ -177,7 +177,7 @@ body {
 .search-bar > input {
   background-color: var(--cardColor);
   width: 100%;
-  height: 30px;
+  height: 62px;
   padding-left: 10px;
   border: none;
   outline: none;
@@ -251,6 +251,7 @@ body {
   flex-wrap: wrap;
   /* margin-top:2px; */
   height:62px;
+  color: #ffffff;
 }
 
 @media only screen and (max-width: 1024px) {
