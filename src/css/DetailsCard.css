@@ -9,12 +9,14 @@
   margin: 1rem;
   margin-bottom: 1rem;
 }
+
 .details:hover {
   transition: all 0.2s ease-out;
   box-shadow: 0px 10px 17px 2px rgba(74, 68, 68, 0.25);
   top: -4px;
   border: 1px solid #cccccc;
 }
+
 .clouds {
   display: flex;
   flex-direction: column;
@@ -22,29 +24,35 @@
   justify-content: center;
   gap: 0.75rem;
 }
+
 .celsius {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--tempColor);
 }
+
 .cloud-icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .cloud-icon img {
   width: 25%;
 }
+
 .des {
   text-transform: uppercase;
   color: var(--subHeadingColor);
   font-size: 0.75rem;
 }
+
 .vl {
   display: flex;
   flex-direction: column;
   border-left: 2px solid var(--hrColor);
 }
+
 .more-info {
   display: flex;
   flex-direction: column;
@@ -53,10 +61,12 @@
   gap: 0.75rem;
   padding-right: 2rem;
 }
+
 .more-info p {
   font-weight: 600;
 }
-.more-info p > span {
+
+.more-info p>span {
   color: var(--statsColor);
   font-size: 1.1rem;
   font-weight: 500;
