@@ -153,7 +153,7 @@ function App() {
       // const {value}=input.target;
       setSearchTerm(input);
       
-      if(!input){                             // created if-else loop for matching countries acc. to input
+      if(!input){                             // created if-else loop for matching countries according to the input
         setCountryMatch([]);
       }
 
