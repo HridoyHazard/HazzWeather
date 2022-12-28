@@ -22,7 +22,7 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 
 - Make a `.env` file.
 - Make an account on [OpenWeather.org](https://openweathermap.org/)
-- Click on your `avatar/uesrName` in navbar.
+- Click on your `avatar/username` in navbar.
 - Click on `My API Keys`.
 - Generate a `key` if there is none.
 - Copy the `Key` and paste in `.env` file.
@@ -64,6 +64,7 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 - Make a pull request! (compare your branch with the owner main branch)
 
 # Contributors
+
 <br>
 <div>
 <h1 align="center">
