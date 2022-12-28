@@ -20,6 +20,9 @@ import BackgroundColor from './components/BackgroundColor';
 import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
 
+import axios from 'axios';
+import {Card} from 'antd';
+
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
   const { t, i18n } = useTranslation();
@@ -87,10 +90,10 @@ function App() {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
 
-  const handleChange = (input) => {
-    const { value } = input.target;
-    setSearchTerm(value);
-  };
+    // const handleChange = (input) => {
+    //   const { value } = input.target;
+    //   setSearchTerm(value);
+    // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -150,6 +153,46 @@ function App() {
   const myIP = (location) => {
     const { latitude, longitude } = location.coords;
     getWeather([latitude, longitude]);
+  };
+
+  // For the autocomplete search box- Places List
+  const [countries,setCountries]=useState([]);
+  const [countryMatch,setCountryMatch]=useState([]);
+
+  useEffect(()=>{
+    const loadCountries=async()=>{
+      const response= await axios.get("https://restcountries.com/v3.1/all");
+      let arr = []
+      response.data.forEach(element => {
+        arr.push(element.name.official);
+      });
+      setCountries(arr);
+      console.log(arr);
+    };
+
+    loadCountries();
+  }, []);
+
+  // console.log(countries);
+
+  const searchCountries=(input)=>{
+      // const {value}=input.target;
+      setSearchTerm(input);
+      
+      if(!input){                             // created if-else loop for matching countries according to the input
+        setCountryMatch([]);
+      }
+
+      else{
+      let matches=countries.filter((country)=>{
+      // eslint-disable-next-line no-template-curly-in-string
+      const regex=new RegExp(`${input}`,"gi");
+      // console.log(regex)
+      return country.match(regex) || country.match(regex);
+    });
+      setCountryMatch(matches);
+    }
+      // console.log(countryMatch);
   };
 
   // load current location weather info on load
@@ -224,18 +267,27 @@ function App() {
             >
               {t('title')}
             </h2>
-
+          
             <hr />
+
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
-              <input
-                type='text'
-                name=''
-                id=''
+              <input 
                 onClick={activate}
                 placeholder={active ? '' : 'Explore cities weather'}
-                onChange={handleChange}
+                onChange={(e)=>searchCountries(e.target.value)}
                 required
+                className="input_search"
               />
+              <div className="list-dropdown">
+                {countryMatch && countryMatch.map((item,index)=>(
+                  <div>
+                    {/* eslint-disable-next-line no-template-curly-in-string */}
+                    <Card title={`Country: ${item}`}>
+                    </Card>
+                  </div>
+                ))} 
+              </div>
+
               <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
@@ -243,7 +295,9 @@ function App() {
                   }}
                 />
               </button>
+
             </form>
+
             <button
               className='s-icon sound-toggler'
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
