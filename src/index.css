@@ -247,7 +247,6 @@ body {
 }
 
 .list-dropdown{
-  overflow: scroll;
   flex-wrap: wrap;
   /* margin-top:2px; */
   height:62px;
