@@ -228,6 +228,7 @@ function App() {
   };
   useEffect(() => {
     determineTimeOfDay();
+    // eslint-disable-next-line
   }, [weatherData]);
 
   return (
