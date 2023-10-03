@@ -14,6 +14,7 @@ import ta from './ta.json';
 import zh from './zh.json';
 import hnd from './hnd.json';
 import he from './he.json';
+import ko from './ko.json';
 
 
 i18n.use(initReactI18next).init({
@@ -29,6 +30,7 @@ i18n.use(initReactI18next).init({
     it: it,
     ta: ta,
     bn: bn,
+    ko: ko,
     zh: zh,
     ptBR: ptBR,
     neNP: neNP,
