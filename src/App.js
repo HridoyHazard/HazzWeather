@@ -183,13 +183,13 @@ function App() {
     // const {value}=input.target;
     setSearchTerm(input);
 
-    if (!input) {
+    if (!input.trim()) {
       // created if-else loop for matching countries according to the input
       setCountryMatch([]);
     } else {
       let matches = countries.filter((country) => {
         // eslint-disable-next-line no-template-curly-in-string
-        const regex = new RegExp(`${input}`, 'gi');
+        const regex = new RegExp(`${input.trim()}`, 'gi');
         // console.log(regex)
         return country.match(regex) || country.match(regex);
       });
