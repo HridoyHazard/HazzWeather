@@ -142,7 +142,8 @@ body {
 }
 
 .selected-language {
-  padding: 5px;
+  padding: 8px;
+  background-color:#7c7979;
   border: none;
   border-radius: 0.75rem;
   margin-bottom: 15px;
@@ -163,6 +164,7 @@ body {
   text-align: center;
   color: #090a14;
   font-family: 'Josefin Sans', 'Open Sans', sans-serif;
+  margin: 0px 25px;
 }
 .search hr {
   border-bottom: 3px solid #ffff;
@@ -449,6 +451,15 @@ body {
   opacity: 0;
   position: absolute;
 }
+/* Add your desired colors for Celsius and Fahrenheit labels */
+.celsius-label {
+  color: rgb(53, 5, 5);
+}
+
+.fahrenheit-label {
+  color: blue;
+}
+
 
 .label {
   width: 50px;
