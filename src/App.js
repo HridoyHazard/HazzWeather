@@ -21,7 +21,7 @@ import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
 
 import axios from 'axios';
-import {Card} from 'antd';
+import { Card } from 'antd';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -90,10 +90,10 @@ function App() {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
 
-    // const handleChange = (input) => {
-    //   const { value } = input.target;
-    //   setSearchTerm(value);
-    // };
+  // const handleChange = (input) => {
+  //   const { value } = input.target;
+  //   setSearchTerm(value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -156,14 +156,14 @@ function App() {
   };
 
   // For the autocomplete search box- Places List
-  const [countries,setCountries]=useState([]);
-  const [countryMatch,setCountryMatch]=useState([]);
+  const [countries, setCountries] = useState([]);
+  const [countryMatch, setCountryMatch] = useState([]);
 
-  useEffect(()=>{
-    const loadCountries=async()=>{
-      const response= await axios.get("https://restcountries.com/v3.1/all");
-      let arr = []
-      response.data.forEach(element => {
+  useEffect(() => {
+    const loadCountries = async () => {
+      const response = await axios.get('https://restcountries.com/v3.1/all');
+      let arr = [];
+      response.data.forEach((element) => {
         arr.push(element.name.official);
       });
       setCountries(arr);
@@ -175,30 +175,61 @@ function App() {
 
   // console.log(countries);
 
-  const searchCountries=(input)=>{
-      // const {value}=input.target;
-      setSearchTerm(input);
-      
-      if(!input){                             // created if-else loop for matching countries according to the input
-        setCountryMatch([]);
-      }
+  const searchCountries = (input) => {
+    // const {value}=input.target;
+    setSearchTerm(input);
 
-      else{
-      let matches=countries.filter((country)=>{
-      // eslint-disable-next-line no-template-curly-in-string
-      const regex=new RegExp(`${input}`,"gi");
-      // console.log(regex)
-      return country.match(regex) || country.match(regex);
-    });
+    if (!input) {
+      // created if-else loop for matching countries according to the input
+      setCountryMatch([]);
+    } else {
+      let matches = countries.filter((country) => {
+        // eslint-disable-next-line no-template-curly-in-string
+        const regex = new RegExp(`${input}`, 'gi');
+        // console.log(regex)
+        return country.match(regex) || country.match(regex);
+      });
       setCountryMatch(matches);
     }
-      // console.log(countryMatch);
+    // console.log(countryMatch);
   };
 
   // load current location weather info on load
   window.addEventListener('load', function () {
     navigator.geolocation.getCurrentPosition(myIP);
   });
+
+  //TO SET THE DARK/LIGHT AUTOMATICALLY AS PER DAY OR NIGHT
+  const determineTimeOfDay = () => {
+    if (weatherData && weatherData.city) {
+      const sunriseTimestamp = weatherData.city.sunrise;
+      const sunsetTimestamp = weatherData.city.sunset;
+      const timezoneOffset = weatherData.city.timezone;
+
+      // Calculate the current timestamp in seconds since the Unix epoch
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+
+      // Calculate the current time in the searched location's timezone
+      const currentTime = new Date((currentTimestamp + timezoneOffset) * 1000);
+
+      // Convert Unix timestamps to actual times for sunrise and sunset
+      const sunriseTime = new Date(sunriseTimestamp * 1000);
+      const sunsetTime = new Date(sunsetTimestamp * 1000);
+
+      // Determine the time of day based on the current time in the searched location
+      if (currentTime < sunriseTime || currentTime >= sunsetTime) {
+        // Before sunrise or after sunset (night)
+        setIsDark(true);
+      } else {
+        // Between sunrise and sunset (day)
+        setIsDark(false);
+      }
+    }
+  };
+  useEffect(() => {
+    determineTimeOfDay();
+  }, [weatherData]);
+
   return (
     <div className='container'>
       <div
@@ -267,24 +298,25 @@ function App() {
             >
               {t('title')}
             </h2>
+
             <hr />
 
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
-              <input 
+              <input
                 onClick={activate}
                 placeholder={active ? '' : 'Explore cities weather'}
-                onChange={(e)=>searchCountries(e.target.value)}
+                onChange={(e) => searchCountries(e.target.value)}
                 required
-                className="input_search"
+                className='input_search'
               />
-              <div className="list-dropdown">
-                {countryMatch && countryMatch.map((item,index)=>(
-                  <div>
-                    {/* eslint-disable-next-line no-template-curly-in-string */}
-                    <Card title={`Country: ${item}`}>
-                    </Card>
-                  </div>
-                ))} 
+              <div className='list-dropdown'>
+                {countryMatch &&
+                  countryMatch.map((item, index) => (
+                    <div>
+                      {/* eslint-disable-next-line no-template-curly-in-string */}
+                      <Card title={`Country: ${item}`}></Card>
+                    </div>
+                  ))}
               </div>
 
               <button className='s-icon'>
@@ -294,7 +326,6 @@ function App() {
                   }}
                 />
               </button>
-
             </form>
 
             <button
@@ -336,21 +367,23 @@ function App() {
               <option value='hnd'>{t('languages.hnd')}</option>
             </select>
             <div className='toggle-container'>
-  <input
-    type='checkbox'
-    className='checkbox'
-    id='fahrenheit-checkbox'
-    onChange={toggleFahrenheit}
-  />
-  <label
-    htmlFor='fahrenheit-checkbox'
-    className={`label ${isFahrenheitMode ? 'fahrenheit-label' : 'celsius-label'}`}
-  >
-    <RiFahrenheitFill />
-    <RiCelsiusFill />
-    <div className='ball' />
-  </label>
-</div>
+              <input
+                type='checkbox'
+                className='checkbox'
+                id='fahrenheit-checkbox'
+                onChange={toggleFahrenheit}
+              />
+              <label
+                htmlFor='fahrenheit-checkbox'
+                className={`label ${
+                  isFahrenheitMode ? 'fahrenheit-label' : 'celsius-label'
+                }`}
+              >
+                <RiFahrenheitFill />
+                <RiCelsiusFill />
+                <div className='ball' />
+              </label>
+            </div>
           </div>
           {loading ? (
             <div className='loader'></div>
