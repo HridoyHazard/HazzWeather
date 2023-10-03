@@ -267,7 +267,6 @@ function App() {
             >
               {t('title')}
             </h2>
-          
             <hr />
 
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
@@ -336,18 +335,21 @@ function App() {
               <option value='hnd'>{t('languages.hnd')}</option>
             </select>
             <div className='toggle-container'>
-              <input
-                type='checkbox'
-                className='checkbox'
-                id='fahrenheit-checkbox'
-                onChange={toggleFahrenheit}
-              />
-              <label htmlFor='fahrenheit-checkbox' className='label'>
-                <RiFahrenheitFill />
-                <RiCelsiusFill />
-                <div className='ball' />
-              </label>
-            </div>
+  <input
+    type='checkbox'
+    className='checkbox'
+    id='fahrenheit-checkbox'
+    onChange={toggleFahrenheit}
+  />
+  <label
+    htmlFor='fahrenheit-checkbox'
+    className={`label ${isFahrenheitMode ? 'fahrenheit-label' : 'celsius-label'}`}
+  >
+    <RiFahrenheitFill />
+    <RiCelsiusFill />
+    <div className='ball' />
+  </label>
+</div>
           </div>
           {loading ? (
             <div className='loader'></div>
