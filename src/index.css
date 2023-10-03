@@ -162,7 +162,7 @@ body {
   font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
-  color: #090a14;
+  color: var(--textColor);
   font-family: 'Josefin Sans', 'Open Sans', sans-serif;
   margin: 0px 25px;
 }
