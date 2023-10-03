@@ -307,34 +307,28 @@ function App() {
         </div>
         <div className='info-container'>
           <div className='info-inner-container'>
-            <select
-              className='selected-language'
-              defaultValue={currentLanguage}
-              onChange={(e) => handleLanguage(e)}
-            >
-              <option selected value='en'>
-                English
-              </option>
-              <option value='es'>Español</option>
-              <option value='fr'>Français</option>
-              <option value='id'>Indonesia</option>
-              <option value='ta'>தமிழ்</option>
-              <option value='zh'>简体中文</option>
-              <option value='ukr'>Ukrainian</option>
-              <option value='es'>{t('languages.es')}</option>
-              <option value='fr'>{t('languages.fr')}</option>
-              <option value='id'>{t('languages.id')}</option>
-              <option value='it'>{t('languages.it')}</option>
-              <option value='ta'>{t('languages.ta')}</option>
-              <option value='bn'>{t('languages.bn')}</option>
-              <option value='ko'>{t('languages.ko')}</option>
-              <option value='zh'>{t('languages.zh')}</option>
-              <option value='ptBR'>{t('languages.ptBR')}</option>
-              <option value='sw'>{t('languages.sw')}</option>
-              <option value='neNP'>{t('languages.neNP')}</option>
-              <option value='he'>{t('languages.he')}</option>
-              <option value='hnd'>{t('languages.hnd')}</option>
-            </select>
+          <select
+            className='selected-language'
+            defaultValue={currentLanguage}
+            onChange={(e) => handleLanguage(e)}
+          >
+            <option value='en'>English</option>
+            <option value='es'>Español</option>
+            <option value='fr'>Français</option>
+            <option value='id'>Indonesia</option>
+            <option value='ta'>தமிழ்</option>
+            <option value='zh'>简体中文</option>
+            <option value='ukr'>Ukrainian</option>
+            <option value='it'>Italiano</option>
+            <option value='bn'>Bengali</option>
+            <option value='ko'>한국어</option>
+            <option value='ptBR'>Português (Brasil)</option>
+            <option value='sw'>Kiswahili</option>
+            <option value='neNP'>Nepali</option>
+            <option value='he'>עברית</option>
+            <option value='hnd'>हिन्दी</option>
+          </select>
+
             <div className='toggle-container'>
   <input
     type='checkbox'
