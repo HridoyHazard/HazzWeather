@@ -320,7 +320,6 @@ function App() {
               <option value='fr'>Français</option>
               <option value='id'>Indonesia</option>
               <option value='ta'>தமிழ்</option>
-              <option value='ko'>한국어</option>
               <option value='zh'>简体中文</option>
               <option value='ukr'>Ukrainian</option>
               <option value='es'>{t('languages.es')}</option>
@@ -329,6 +328,7 @@ function App() {
               <option value='it'>{t('languages.it')}</option>
               <option value='ta'>{t('languages.ta')}</option>
               <option value='bn'>{t('languages.bn')}</option>
+              <option value='ko'>{t('languages.ko')}</option>
               <option value='zh'>{t('languages.zh')}</option>
               <option value='ptBR'>{t('languages.ptBR')}</option>
               <option value='sw'>{t('languages.sw')}</option>
