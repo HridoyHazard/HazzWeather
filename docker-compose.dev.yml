@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  app:
+    container_name: hazzweather_dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - REACT_APP_API_KEY
+      - REACT_APP_URL
+      - REACT_APP_ICON_URL
+      - CHOKIDAR_USEPOOLING=true

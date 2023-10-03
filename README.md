@@ -20,14 +20,45 @@ Weather Application created using ReactJS and APIs provided by OpenAPI.org.
 
 ## Setup Guide
 
-- Make a `.env` file.
+- Copy the `.env.example` file and rename it to `.env`.
 - Make an account on [OpenWeather.org](https://openweathermap.org/)
 - Click on your `avatar/username` in navbar.
 - Click on `My API Keys`.
 - Generate a `key` if there is none.
 - Copy the `Key` and paste in `.env` file.
+
+### For local development / deployment
+
 - Install the node modules with `npm i`.
 - Run the application using `npm start`.
+- Access to the application with http://localhost:3000
+- To exit press CTRL+C
+
+### For build and run a local development / deployment container using Docker and Docker-Compose
+
+- Install Docker and Docker-Compose. The best way is to install Docker Desktop, please refer to the docs at https://docs.docker.com/get-docker/.
+- Execute `docker-compose -f docker-compose.dev.yml up` or use `make compose-run-dev` to deploy a local container.
+- Access to the application with http://localhost:3000
+- To see the actual log of the container, run `docker logs -f hazzweather_dev`, to exit press CTRL+C
+- To stop the container, execute `docker-compose -f docker-compose.dev.yml down` or `make compose-stop-dev`
+
+### For build and run a local production container using Docker and Docker-Compose
+
+- Install Docker and Docker-Compose. The best way is to install Docker Desktop, please refer to the docs at https://docs.docker.com/get-docker/.
+- Execute `docker-compose -f docker-compose.prod.yml up` or use `make compose-run-prod` to deploy a local container.
+- Access to the application with http://localhost:3000
+- To see the actual log of the container, run `docker logs -f hazzweather_prod`, to exit press CTRL+C
+- To stop the container, execute `docker-compose -f docker-compose.prod.yml down` or `make compose-stop-prod`
+
+### For build and run a production container using Docker (intented for orchestration or deployment in the cloud)
+
+- Install Docker. The best way is to install Docker Desktop, please refer to the docs at https://docs.docker.com/get-docker/.
+- Execute `docker build -f Dockerfile.prod --target production -t hazzweather . --no-cache` or use `make docker-build-prod` to build the image
+- Execute `docker run -d -p 80:80 --env-file .env --name hazzweather_prod hazzweather` or use `make docker-run-prod` to run the container
+- Access to the application with http://localhost
+- To see the actual log of the container, run `docker logs -f hazzweather_prod`, to exit press CTRL+C
+- To stop the container, execute `docker stop hazzweather_prod` or `make docker-stop-prod`
+- If you need to delete the container, execute `docker rm hazzweather_prod` or use `make docker-rm-prod`
 
 ## REPO STATUS
 
