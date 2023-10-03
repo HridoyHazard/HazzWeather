@@ -21,7 +21,7 @@ import BackgroundImage from './components/BackgroundImage';
 import Animation from './components/Animation';
 
 import axios from 'axios';
-import {Card} from 'antd';
+import { Card } from 'antd';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -90,10 +90,10 @@ function App() {
     setIsFahrenheitMode(!isFahrenheitMode);
   };
 
-    // const handleChange = (input) => {
-    //   const { value } = input.target;
-    //   setSearchTerm(value);
-    // };
+  // const handleChange = (input) => {
+  //   const { value } = input.target;
+  //   setSearchTerm(value);
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -156,14 +156,14 @@ function App() {
   };
 
   // For the autocomplete search box- Places List
-  const [countries,setCountries]=useState([]);
-  const [countryMatch,setCountryMatch]=useState([]);
+  const [countries, setCountries] = useState([]);
+  const [countryMatch, setCountryMatch] = useState([]);
 
-  useEffect(()=>{
-    const loadCountries=async()=>{
-      const response= await axios.get("https://restcountries.com/v3.1/all");
-      let arr = []
-      response.data.forEach(element => {
+  useEffect(() => {
+    const loadCountries = async () => {
+      const response = await axios.get('https://restcountries.com/v3.1/all');
+      let arr = [];
+      response.data.forEach((element) => {
         arr.push(element.name.official);
       });
       setCountries(arr);
@@ -175,30 +175,62 @@ function App() {
 
   // console.log(countries);
 
-  const searchCountries=(input)=>{
-      // const {value}=input.target;
-      setSearchTerm(input);
-      
-      if(!input){                             // created if-else loop for matching countries according to the input
-        setCountryMatch([]);
-      }
+  const searchCountries = (input) => {
+    // const {value}=input.target;
+    setSearchTerm(input);
 
-      else{
-      let matches=countries.filter((country)=>{
-      // eslint-disable-next-line no-template-curly-in-string
-      const regex=new RegExp(`${input}`,"gi");
-      // console.log(regex)
-      return country.match(regex) || country.match(regex);
-    });
+    if (!input) {
+      // created if-else loop for matching countries according to the input
+      setCountryMatch([]);
+    } else {
+      let matches = countries.filter((country) => {
+        // eslint-disable-next-line no-template-curly-in-string
+        const regex = new RegExp(`${input}`, 'gi');
+        // console.log(regex)
+        return country.match(regex) || country.match(regex);
+      });
       setCountryMatch(matches);
     }
-      // console.log(countryMatch);
+    // console.log(countryMatch);
   };
 
   // load current location weather info on load
   window.addEventListener('load', function () {
     navigator.geolocation.getCurrentPosition(myIP);
   });
+
+  //TO SET THE DARK/LIGHT AUTOMATICALLY AS PER DAY OR NIGHT
+  const determineTimeOfDay = () => {
+    if (weatherData && weatherData.city) {
+      const sunriseTimestamp = weatherData.city.sunrise;
+      const sunsetTimestamp = weatherData.city.sunset;
+      const timezoneOffset = weatherData.city.timezone;
+
+      // Calculate the current timestamp in seconds since the Unix epoch
+      const currentTimestamp = Math.floor(Date.now() / 1000);
+
+      // Calculate the current time in the searched location's timezone
+      const currentTime = new Date((currentTimestamp + timezoneOffset) * 1000);
+
+      // Convert Unix timestamps to actual times for sunrise and sunset
+      const sunriseTime = new Date(sunriseTimestamp * 1000);
+      const sunsetTime = new Date(sunsetTimestamp * 1000);
+
+      // Determine the time of day based on the current time in the searched location
+      if (currentTime < sunriseTime || currentTime >= sunsetTime) {
+        // Before sunrise or after sunset (night)
+        setIsDark(true);
+      } else {
+        // Between sunrise and sunset (day)
+        setIsDark(false);
+      }
+    }
+  };
+  useEffect(() => {
+    determineTimeOfDay();
+    // eslint-disable-next-line
+  }, [weatherData]);
+
   return (
     <div className='container'>
       <div
@@ -267,25 +299,25 @@ function App() {
             >
               {t('title')}
             </h2>
-          
+
             <hr />
 
             <form className='search-bar' noValidate onSubmit={handleSubmit}>
-              <input 
+              <input
                 onClick={activate}
                 placeholder={active ? '' : 'Explore cities weather'}
-                onChange={(e)=>searchCountries(e.target.value)}
+                onChange={(e) => searchCountries(e.target.value)}
                 required
-                className="input_search"
+                className='input_search'
               />
-              <div className="list-dropdown">
-                {countryMatch && countryMatch.map((item,index)=>(
-                  <div>
-                    {/* eslint-disable-next-line no-template-curly-in-string */}
-                    <Card title={`Country: ${item}`}>
-                    </Card>
-                  </div>
-                ))} 
+              <div className='list-dropdown'>
+                {countryMatch &&
+                  countryMatch.map((item, index) => (
+                    <div>
+                      {/* eslint-disable-next-line no-template-curly-in-string */}
+                      <Card title={`Country: ${item}`}></Card>
+                    </div>
+                  ))}
               </div>
 
               <button className='s-icon'>
@@ -295,7 +327,6 @@ function App() {
                   }}
                 />
               </button>
-
             </form>
 
             <button
@@ -308,33 +339,28 @@ function App() {
         </div>
         <div className='info-container'>
           <div className='info-inner-container'>
-            <select
-              className='selected-language'
-              defaultValue={currentLanguage}
-              onChange={(e) => handleLanguage(e)}
-            >
-              <option selected value='en'>
-                English
-              </option>
-              <option value='es'>Español</option>
-              <option value='fr'>Français</option>
-              <option value='id'>Indonesia</option>
-              <option value='ta'>தமிழ்</option>
-              <option value='zh'>简体中文</option>
-              <option value='ukr'>Ukrainian</option>
-              <option value='es'>{t('languages.es')}</option>
-              <option value='fr'>{t('languages.fr')}</option>
-              <option value='id'>{t('languages.id')}</option>
-              <option value='it'>{t('languages.it')}</option>
-              <option value='ta'>{t('languages.ta')}</option>
-              <option value='bn'>{t('languages.bn')}</option>
-              <option value='zh'>{t('languages.zh')}</option>
-              <option value='ptBR'>{t('languages.ptBR')}</option>
-              <option value='sw'>{t('languages.sw')}</option>
-              <option value='neNP'>{t('languages.neNP')}</option>
-              <option value='he'>{t('languages.he')}</option>
-              <option value='hnd'>{t('languages.hnd')}</option>
-            </select>
+          <select
+            className='selected-language'
+            defaultValue={currentLanguage}
+            onChange={(e) => handleLanguage(e)}
+          >
+            <option value='en'>English</option>
+            <option value='es'>Español</option>
+            <option value='fr'>Français</option>
+            <option value='id'>Indonesia</option>
+            <option value='ta'>தமிழ்</option>
+            <option value='zh'>简体中文</option>
+            <option value='ukr'>Ukrainian</option>
+            <option value='it'>Italiano</option>
+            <option value='bn'>Bengali</option>
+            <option value='ko'>한국어</option>
+            <option value='ptBR'>Português (Brasil)</option>
+            <option value='sw'>Kiswahili</option>
+            <option value='neNP'>Nepali</option>
+            <option value='he'>עברית</option>
+            <option value='hnd'>हिन्दी</option>
+          </select>
+
             <div className='toggle-container'>
               <input
                 type='checkbox'
@@ -342,7 +368,12 @@ function App() {
                 id='fahrenheit-checkbox'
                 onChange={toggleFahrenheit}
               />
-              <label htmlFor='fahrenheit-checkbox' className='label'>
+              <label
+                htmlFor='fahrenheit-checkbox'
+                className={`label ${
+                  isFahrenheitMode ? 'fahrenheit-label' : 'celsius-label'
+                }`}
+              >
                 <RiFahrenheitFill />
                 <RiCelsiusFill />
                 <div className='ball' />
