@@ -322,7 +322,6 @@ function App() {
                   ))}
               </div>
               )}
-
               <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
@@ -331,7 +330,7 @@ function App() {
                 />
               </button>
             </form>
-
+             
             <button
               className='s-icon sound-toggler'
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
