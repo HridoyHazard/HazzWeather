@@ -310,7 +310,8 @@ function App() {
                 required
                 className='input_search'
               />
-              <div className='list-dropdown'>
+              {countryMatch.length > 0 && (
+              <div className='list-dropdown country-suggestions'>
                 {countryMatch &&
                   countryMatch.map((item, index) => (
                     <div>
@@ -319,7 +320,7 @@ function App() {
                     </div>
                   ))}
               </div>
-
+              )}
               <button className='s-icon'>
                 <TbSearch
                   onClick={() => {
@@ -328,7 +329,7 @@ function App() {
                 />
               </button>
             </form>
-
+             
             <button
               className='s-icon sound-toggler'
               onClick={() => setBackgroundSoundEnabled((prev) => !prev)}
