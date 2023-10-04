@@ -417,7 +417,7 @@ body {
   }
   .search-bar {
     display: flex;
-    width: 100%;
+    width: 97%;
     padding-bottom: 10%;
   }
   .info-container {
@@ -445,6 +445,7 @@ body {
   }
   .summary {
     display: grid;
+    font-size: 1.3rem;
     grid-template-columns: repeat(2, 49%);
     align-self: center;
   }
