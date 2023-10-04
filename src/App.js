@@ -311,7 +311,8 @@ function App() {
                 className={isDark ? 'input_search_dark' : 'input_search'}
 
               />
-              <div className='list-dropdown'>
+              {countryMatch.length > 0 && (
+              <div className='list-dropdown country-suggestions'>
                 {countryMatch &&
                   countryMatch.map((item, index) => (
                     <div>
@@ -320,6 +321,7 @@ function App() {
                     </div>
                   ))}
               </div>
+              )}
 
               <button className='s-icon'>
                 <TbSearch
