@@ -22,6 +22,7 @@ import Animation from './components/Animation';
 
 import axios from 'axios';
 import { Card } from 'antd';
+import toast from 'react-hot-toast';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -97,6 +98,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!searchTerm.trim()) {
+      return toast.error('Please enter a location');
+    }
     getWeather(searchTerm);
   };
 
