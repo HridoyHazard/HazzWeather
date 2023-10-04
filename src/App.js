@@ -22,6 +22,7 @@ import Animation from './components/Animation';
 
 import axios from 'axios';
 import { Card } from 'antd';
+import toast from 'react-hot-toast';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY;
@@ -93,6 +94,9 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!searchTerm.trim()) {
+      return toast.error('Please enter a location');
+    }
     getWeather(searchTerm);
   };
 
@@ -177,13 +181,13 @@ function App() {
     // const {value}=input.target;
     setSearchTerm(input);
 
-    if (!input) {
+    if (!input.trim()) {
       // created if-else loop for matching countries according to the input
       setCountryMatch([]);
     } else {
       let matches = countries.filter((country) => {
         // eslint-disable-next-line no-template-curly-in-string
-        const regex = new RegExp(`${input}`, 'gi');
+        const regex = new RegExp(`${input.trim()}`, 'gi');
         // console.log(regex)
         return country.match(regex) || country.match(regex);
       });
