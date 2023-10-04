@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState} from 'react';
 import { useTranslation } from 'react-i18next';
 import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
 import {
@@ -43,7 +43,7 @@ function App() {
     () => (isFahrenheitMode ? '\u00b0F' : '\u00b0C'),
     [isFahrenheitMode]
   );
-  const [active, setActive] = useState(false);
+
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -72,10 +72,6 @@ function App() {
 
   const toggleDark = () => {
     setIsDark((prev) => !prev);
-  };
-
-  const activate = () => {
-    setActive(true);
   };
 
   useEffect(() => {
@@ -158,6 +154,8 @@ function App() {
   // For the autocomplete search box- Places List
   const [countries, setCountries] = useState([]);
   const [countryMatch, setCountryMatch] = useState([]);
+  const [searchValue, setSearchValue] = useState([]);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     const loadCountries = async () => {
@@ -190,8 +188,16 @@ function App() {
         return country.match(regex) || country.match(regex);
       });
       setCountryMatch(matches);
+      setDropdownVisible(true);
     }
     // console.log(countryMatch);
+    setSearchValue(input);
+  };
+
+  const handleSelection = (selectedCountry) => {
+    setSearchValue(selectedCountry);
+    setDropdownVisible(false); // Hide the dropdown after selection
+    // You can perform search or other actions related to the selected country here
   };
 
   // load current location weather info on load
@@ -302,33 +308,38 @@ function App() {
 
             <hr />
 
-            <form className='search-bar' noValidate onSubmit={handleSubmit}>
-              <input
-                onClick={activate}
-                placeholder={active ? '' : 'Explore cities weather'}
-                onChange={(e) => searchCountries(e.target.value)}
-                required
-                className={isDark ? 'input_search_dark' : 'input_search'}
-
-              />
-              <div className='list-dropdown'>
-                {countryMatch &&
-                  countryMatch.map((item, index) => (
-                    <div>
-                      {/* eslint-disable-next-line no-template-curly-in-string */}
-                      <Card title={`Country: ${item}`}></Card>
-                    </div>
-                  ))}
-              </div>
-
-              <button className='s-icon'>
-                <TbSearch
-                  onClick={() => {
-                    navigator.geolocation.getCurrentPosition(myIP);
-                  }}
-                />
-              </button>
-            </form>
+    <form className='form-width' noValidate onSubmit={handleSubmit}>
+      <div className='search-bar'>
+      <input
+        onClick={() => setDropdownVisible(true)}
+        placeholder={'Explore cities weather'}
+        onChange={(e) => searchCountries(e.target.value)}
+        value={searchValue}
+        required
+        className={isDark ? 'input_search_dark' : 'input_search'}
+      />
+      {isDropdownVisible && countryMatch.length > 0 && (
+        <div className='list-dropdown'>
+          {countryMatch.map((item, index) => (
+            <div
+              key={index}
+              onClick={() => handleSelection(item)} 
+              className='dropdown-item'
+            >
+              <Card title={`Country: ${item}`} />
+            </div>
+          ))}
+        </div>
+      )}
+      <button className='s-icon'>
+        <TbSearch
+          onClick={() => {
+            navigator.geolocation.getCurrentPosition(myIP);
+          }}
+        />
+      </button>
+      </div>
+    </form>
 
             <button
               className='s-icon sound-toggler'
