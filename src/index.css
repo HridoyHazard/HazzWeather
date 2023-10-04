@@ -272,7 +272,11 @@ body {
   flex-wrap: wrap;
   /* margin-top:2px; */
   height: 62px;
-  color: #ffffff;
+  /* color: #ffffff; */
+  background-color:  var(--cardColor);
+  z-index: 2;
+  font-size: 1rem;
+  color: var(--textColor);
 }
 
 @media only screen and (max-width: 1024px) {
