@@ -1,8 +1,9 @@
 import React from 'react';
 
 function MoreInfoCard({ data }) {
-
     const { formattedData, degreeSymbol, main, clouds, t } = data;
+
+    const averageTemp = (formattedData.temp_min + formattedData.temp_max) / 2;
 
     return (
         <div className='more-info'>
@@ -33,8 +34,15 @@ function MoreInfoCard({ data }) {
                     {degreeSymbol}
                 </span>
             </p>
+            <p className=''>
+                {t('avg-temp')}:{' '}
+                <span>
+                    {averageTemp}
+                    {degreeSymbol}
+                </span>
+            </p>
         </div>
-    )
+    );
 }
 
 export default MoreInfoCard;

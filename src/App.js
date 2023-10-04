@@ -308,7 +308,8 @@ function App() {
                 placeholder={active ? '' : 'Explore cities weather'}
                 onChange={(e) => searchCountries(e.target.value)}
                 required
-                className='input_search'
+                className={isDark ? 'input_search_dark' : 'input_search'}
+
               />
               {countryMatch.length > 0 && (
               <div className='list-dropdown country-suggestions'>
