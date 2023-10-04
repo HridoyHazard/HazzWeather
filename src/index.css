@@ -53,6 +53,8 @@ button {
 body {
   font-family: 'Josefin Sans', 'Open Sans', sans-serif;
   overflow: auto;
+  background-color: var(--bgColor1); 
+  height: 100vh; 
 }
 
 .container {
