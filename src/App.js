@@ -43,7 +43,7 @@ function App() {
     () => (isFahrenheitMode ? '\u00b0F' : '\u00b0C'),
     [isFahrenheitMode]
   );
-  const [active, setActive] = useState(false);
+
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -72,10 +72,6 @@ function App() {
 
   const toggleDark = () => {
     setIsDark((prev) => !prev);
-  };
-
-  const activate = () => {
-    setActive(true);
   };
 
   useEffect(() => {
