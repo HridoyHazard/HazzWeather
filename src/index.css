@@ -207,19 +207,7 @@ body {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-family: 'Josefin Sans', sans-serif;
-  z-index: 10;
   
-}
-.country-suggestions {
-  /* position: absolute;  */
-  top: 100%; 
-  /* left: 0;  */
-  width: 100%; 
-  background-color: #ffffff; 
-  max-height: 210px; 
-  overflow-y: auto; 
-  z-index: 2; 
-  padding-top: 5px;
 }
 .s-icon {
   display: flex;
@@ -232,10 +220,6 @@ body {
   padding: 8px;
   color: var(--textColor);
   transition: all 0.5s ease;
-  margin-top: 10px;
-  z-index: 0;
-  /* height: 62px; */
-  top: 0;
 }
 .s-icon:hover {
   cursor: pointer;
