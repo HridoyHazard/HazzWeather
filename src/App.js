@@ -323,7 +323,7 @@ function App() {
         className={isDark ? 'input_search_dark' : 'input_search'}
       />
       {isDropdownVisible && countryMatch.length > 0 && (
-        <div className='list-dropdown country-suggestions'>
+        <div className='list-dropdown'>
           {countryMatch.map((item, index) => (
             <div
               key={index}

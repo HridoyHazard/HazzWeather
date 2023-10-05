@@ -184,10 +184,7 @@ body {
 .search-bar {
   position: relative;
   display: flex;
-  flex-direction: column;
   width: 50%;
-  padding: 2% 28%;
-
 }
 
 .form-width{
@@ -195,7 +192,6 @@ body {
   justify-content: center;
   width: 100%;
 }
-
 
 .search-bar > input {
   background-color: var(--cardColor);
@@ -211,6 +207,7 @@ body {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-family: 'Josefin Sans', sans-serif;
+  z-index: 10;
   
 }
 .country-suggestions {
@@ -237,6 +234,8 @@ body {
   transition: all 0.5s ease;
   margin-top: 10px;
   z-index: 0;
+  /* height: 62px; */
+  top: 0;
 }
 .s-icon:hover {
   cursor: pointer;
