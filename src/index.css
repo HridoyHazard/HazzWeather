@@ -180,14 +180,22 @@ body {
   border-bottom: 3px solid #ffff;
   width: 30%;
 }
+
 .search-bar {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 50%;
   padding: 2% 28%;
-  flex-direction: column;
+
+
+
+.form-width{
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
+
 
 .search-bar > input {
   background-color: var(--cardColor);
@@ -276,12 +284,29 @@ body {
 }
 
 .list-dropdown {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 10; /* Set a higher z-index value */
+  background-color: var(--cardColor); 
   flex-wrap: wrap;
-  /* margin-top:2px; */
-  background-color:  var(--cardColor);
-  z-index: 2;
   font-size: 1rem;
+  margin-top: 62px;
+  height: 10vh;
   color: var(--textColor);
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dropdown-item{
+  width: 100%;
+  padding: 10px;
+}
+
+.dropdown-item:hover {
+  background-color: var(--textColor);
+  color: var(--cardColor);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -328,7 +353,7 @@ body {
   }
   .search-bar {
     display: flex;
-    width: 100%;
+    width: 50%;
     padding-bottom: 10%;
   }
   .info-container {
