@@ -53,6 +53,12 @@ button {
 body {
   font-family: 'Josefin Sans', 'Open Sans', sans-serif;
   overflow: auto;
+  background-image: linear-gradient(
+    45deg,
+    var(--bgColor1) 0%,
+    var(--bgColor2) 50%
+  );
+  height: 100vh; 
 }
 
 .container {
@@ -179,16 +185,16 @@ body {
   width: 30%;
 }
 
+.search-bar {
+  position: relative;
+  display: flex;
+  width: 50%;
+}
+
 .form-width{
   display: flex;
   justify-content: center;
   width: 100%;
-}
-
-.search-bar {
-  display: flex;
-  width: 50%;
-  position: relative;
 }
 
 .search-bar > input {
@@ -205,6 +211,7 @@ body {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-family: 'Josefin Sans', sans-serif;
+  
 }
 .s-icon {
   display: flex;
@@ -270,6 +277,7 @@ body {
   z-index: 10; /* Set a higher z-index value */
   background-color: var(--cardColor); 
   flex-wrap: wrap;
+  font-size: 1rem;
   margin-top: 62px;
   height: 10vh;
   color: var(--textColor);
