@@ -1,0 +1,44 @@
+name: 👯‍♂️ Style Changing Request
+description: Suggest a style designs
+title: '[style]'
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this template!
+
+  - type: textarea
+    id: style-idea
+    attributes:
+      label: What's the style idea?
+      placeholder: Add descriptions
+      value: 'We need to improve'
+      validations:
+          required: true
+
+  - type: checkboxes
+    id: no-duplicate-issues
+    attributes:
+      label: "Checklist"
+      options:
+        - label: "I have checked the existing issues"
+          required: true
+
+        - label: "I have read the [Contributing Guidelines](https://github.com/HridoyHazard/HazzWeather/blob/main/CONTRIBUTING.md)"
+          required: true
+
+        - label: "I am willing to work on this issue (optional)"
+          required: false
+
+        - label: "I am a Hacktoberfest 2023 contributor"
+          required: false
+  
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our Code of Conduct
+      options:
+        - label: I agree to follow this project's Code of Conduct
